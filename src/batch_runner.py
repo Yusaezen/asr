@@ -50,7 +50,7 @@ def run_batch(
 
             results.append(result)
 
-            if result["parse_method"] != "schema":
+            if result["parse_method"] not in ("schema", "schema_repaired"):
                 failures.append({
                     "sample_id": sample["id"],
                     "question": sample["question"],
@@ -79,11 +79,19 @@ def run_batch(
 
     # Summary
     schema_ok = sum(1 for r in results if r.get("parse_method") == "schema")
+    repaired  = sum(1 for r in results if r.get("parse_method") == "schema_repaired")
+    delim     = sum(1 for r in results if r.get("parse_method") == "fallback_delimiter")
+    sentence  = sum(1 for r in results if r.get("parse_method") == "fallback_sentence")
+    structured_ok = schema_ok + repaired  # both recover full step structure
     logger.info("=" * 50)
     logger.info(f"Batch complete: {len(results)}/{n_samples} succeeded")
-    logger.info(f"  Schema parse:    {schema_ok}")
-    logger.info(f"  Fallback parses: {len(results) - schema_ok}")
-    logger.info(f"  Errors:          {n_samples - len(results)}")
+    logger.info(f"  Structured (schema + repaired): {structured_ok}")
+    logger.info(f"    - clean schema:      {schema_ok}")
+    logger.info(f"    - repaired schema:   {repaired}")
+    logger.info(f"  True fallbacks:        {delim + sentence}")
+    logger.info(f"    - delimiter:         {delim}")
+    logger.info(f"    - sentence:          {sentence}")
+    logger.info(f"  Errors:                {n_samples - len(results)}")
     logger.info(f"Results → {results_path}")
     logger.info(f"Failures → {failures_path}")
 
