@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from model_client import generate, check_ollama_running, list_available_models, DEFAULT_MODEL
 from step_parser import parse_model_output
+from prompts import build_prompt, SYSTEM_PROMPT as DATASET_SYSTEM_PROMPT
 from schema import CoTDraft
 
 logging.basicConfig(
@@ -95,14 +96,14 @@ def run(
     complexity, n_steps = classify_complexity(question)
     logger.info(f"Classified as [{complexity}] — expecting {n_steps} steps.")
 
-    prompt = _build_prompt(question, complexity, n_steps)
+    prompt = build_prompt(question, dataset=dataset, complexity=complexity, n_steps=n_steps)
 
     logger.info(f"Generating CoT draft with {model}...")
     raw_output = generate(
         prompt=prompt,
         model=model,
         temperature=temperature,
-        system_prompt=SYSTEM_PROMPT,
+        system_prompt=DATASET_SYSTEM_PROMPT,
     )
     logger.info("Generation complete. Parsing output...")
 

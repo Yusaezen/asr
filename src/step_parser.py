@@ -4,15 +4,15 @@ import re
 from typing import Optional
 
 from schema import CoTDraft, ReasoningStep
-from fallback import parse_by_delimiter, parse_by_sentences, extract_final_answer
+from fallback import (
+    repair_and_parse_json,
+    parse_by_delimiter,
+    parse_by_sentences,
+    extract_final_answer,
+    strip_markdown_fences,
+)
 
 logger = logging.getLogger(__name__)
-
-
-def _strip_markdown_fences(text: str) -> str:
-    text = re.sub(r"^```(?:json)?\s*", "", text.strip(), flags=re.MULTILINE)
-    text = re.sub(r"```\s*$", "", text.strip(), flags=re.MULTILINE)
-    return text.strip()
 
 
 def parse_model_output(
@@ -21,13 +21,16 @@ def parse_model_output(
     complexity: str,
     dataset: str = "musique",
 ) -> CoTDraft:
+    r"""
+    Parse priority:
+      1. strict JSON
+      2. repaired JSON  (fixes Mistral '\_' illegal-escape quirk) <-- recovers steps
+      3. delimiter fallback ('Step N:')
+      4. sentence fallback (last resort)
     """
-    Attempt to parse model output into a CoTDraft.
-    Priority: JSON schema parse → delimiter fallback → sentence fallback.
-    """
-    raw_clean = _strip_markdown_fences(raw_output)
+    raw_clean = strip_markdown_fences(raw_output)
 
-    # ── 1. Try strict JSON parse ──────────────────────────────────────────────
+    # ── 1. strict JSON ────────────────────────────────────────────────────────
     try:
         data = json.loads(raw_clean)
         draft = CoTDraft(**data)
@@ -36,12 +39,33 @@ def parse_model_output(
         logger.info("Parsed via JSON schema.")
         return draft
     except Exception as e:
-        logger.warning(f"JSON parse failed: {e}. Trying delimiter fallback.")
+        logger.warning(f"Strict JSON failed: {e}. Trying JSON repair.")
 
-    # ── 2. Delimiter fallback ('Step N:') ─────────────────────────────────────
+    # ── 2. repaired JSON (THE pilot fix) ──────────────────────────────────────
+    data = repair_and_parse_json(raw_output)
+    if data and isinstance(data, dict) and data.get("steps"):
+        try:
+            # the model sometimes nests the whole schema inside content; data
+            # here is the top-level object, so build directly.
+            draft = CoTDraft(
+                question=data.get("question", question),
+                dataset=data.get("dataset", dataset),
+                complexity=data.get("complexity", complexity),
+                steps=[ReasoningStep(**s) for s in data["steps"]],
+                final_answer=str(data.get("final_answer", "")),
+                raw_output=raw_output,
+                parse_method="schema_repaired",
+            )
+            logger.info("Parsed via repaired JSON (recovered illegal escapes).")
+            return draft
+        except Exception as e:
+            logger.warning(f"Repaired JSON had bad structure: {e}. Falling through.")
+
+    # ── 3. delimiter fallback ─────────────────────────────────────────────────
     steps_raw = parse_by_delimiter(raw_output)
     parse_method = "fallback_delimiter"
 
+    # ── 4. sentence fallback ──────────────────────────────────────────────────
     if not steps_raw:
         logger.warning("Delimiter fallback failed. Trying sentence segmentation.")
         steps_raw = parse_by_sentences(raw_output)
