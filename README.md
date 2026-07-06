@@ -1,80 +1,78 @@
 # Adaptive Speculative Reasoning
 
-This repository contains the infrastructure, prompt designs, and generation harnesses to explore and evaluate structured Chain-of-Thought (CoT) generation across different reasoning datasets.
+This repository contains the infrastructure, prompt designs, and evaluation harnesses to explore structured Chain-of-Thought (CoT) generation and step-wise confidence scoring across reasoning datasets (GSM8K, HotpotQA, MuSiQue).
 
 ## Current Project Phase
-We have successfully completed the foundational infrastructure and prompt design phases. The core generation pipelines are now running, and we are moving into the **Manual QA & Data Curation** phase. 
+We have successfully completed **Phase 1** (Generation Infrastructure & Prompting) and the initial parts of **Phase 2** (Confidence Scoring). We are now officially entering **Phase 3: Manual QA & Data Curation**, where we must manually evaluate the generations and validate if our confidence scores actually correlate with correct reasoning.
 
 ---
 
-## What Has Been Built (Intern 1 & 2 Tasks Completed)
+## What Has Been Built 
 
-### 1. Infrastructure & Constrained Generation (Baala)
-- **Local Model Setup:** A small draft model is integrated via API/HF in `src/model_client.py`.
+### Phase 1: Infrastructure & Prompt Design (Completed)
+- **Local Model Setup:** A 7B model is integrated via HF in `src/model_client.py`.
 - **Generation Harness (`src/generation_harness.py`):** The core pipeline that accepts a question, runs the model, and returns a cleanly parsed list of steps.
-- **Structured Output Generation (`src/schema.py`):** Uses JSON schemas/grammar-constrained decoding to force the model to separate its reasoning steps reliably.
-- **Step Parser (`src/step_parser.py`):** Consumes the raw model output and strictly enforces the parsed step list.
-- **Fallback Logic (`src/fallback.py`):** Custom engineering that handles and segments outputs when structured generation alone isn't sufficient.
+- **Structured Outputs & Parsing (`src/schema.py`, `src/step_parser.py`):** Forces the model to separate its reasoning steps reliably.
+- **Few-Shot Prompting (`src/prompts.py`):** Tailored few-shot exemplars designed specifically for step-formatted CoT generation per dataset.
+- **Fallback Logic (`src/fallback.py`):** Custom engineering that handles and segments outputs when structured generation fails.
 
-### 2. Prompt Design & Pilot Generation (Nithilan)
-- **Few-Shot Prompting (`src/prompts.py`):** Tailored few-shot exemplars designed specifically for step-formatted CoT generation. Handled per dataset:
-  - **GSM8K (`src/load_gsm8k.py`):** Focuses on numeric, math-based step formulation.
-  - **HotpotQA (`src/load_hotpotqa.py`) & MuSiQue (`src/load_musique.py`):** Focuses on multi-hop bridging steps.
-- **Sentence-Boundary Fallback (`src/fallback.py`):** Additional segmenter logic for edge cases where the structured format fails to isolate steps.
-- **Pilot Generations:** Pilot batches have been run across all three datasets and their outputs are saved in the `outputs/` directory.
+### Phase 2: Confidence Scoring (Completed)
+We have implemented a system to attach a numerical confidence score to every single reasoning step generated in Phase 1 (`src/confidence/`). The model isn't explicitly trained to output confidence; instead, we extract it using two methods:
+1. **Logprob Scorer (`logprob_scorer.py`):** Extracts the model's raw next-token probabilities for a given step, averages them, and normalizes the score to `[0, 1]`. (Fast)
+2. **Sampling Scorer (`sampling_scorer.py`):** Generates a step multiple times to measure the model's consistency and agreement with itself. (Very compute-heavy/slow)
 
-*(Note: Intern 2 will continue to iterate on prompt wording based on findings from the Manual QA phase.)*
+Outputs from these scorers are saved in `outputs/<dataset>_confidence_scores.json`.
 
 ---
 
-## Next Steps: Manual QA & Data Curation Guide
+## Next Steps: Phase 3 (Manual QA & Data Curation)
 
-With the pilot generation complete, the immediate next goal is to systematically evaluate the model's output quality. **If you are stepping in to run QA (Intern 3 / Intern 2 iterating on prompts), please follow this workflow:**
+With the pilot generation and scoring complete, the immediate next goal is for the QA team to evaluate the outputs. **If you are stepping in to run QA, please follow this workflow:**
 
-### 1. Inspect Pilot Outputs
-Navigate to the `outputs/` folder. This contains the generated step lists from our pilot runs across GSM8K, HotpotQA, and MuSiQue.
-You will manually inspect the output files to evaluate the model on the following criteria:
-- **Atomic Steps:** Is each step a single, logical thought?
+### 1. Inspect the Scored Outputs
+Navigate to the `outputs/` folder and open the `_confidence_scores.json` files. These contain the generated step lists alongside their `confidence_logprob` (and/or `confidence_sampling`) scores.
+
+Evaluate the model on the following criteria:
 - **Separability:** Are steps properly separated, or are multiple steps merged together?
-- **Completeness:** Are there any missing logical steps?
-- **Consistency:** Does the output strictly follow the requested JSON/formatting constraints?
+- **Completeness & Accuracy:** Are there any missing logical steps, and is the math/logic actually correct?
 
-### 2. Categorize Failure Types
-When you find a failure, do not just mark it as failed. Categorize the failure into one of the following buckets so the Prompt/Infrastructure teams can fix it:
-- `NO_SEPARATION`: The model dumped all text into a single step.
-- `MALFORMED_JSON`: The model failed to adhere to the schema constraint, breaking the parser.
-- `MIXED_CONTENT`: The model included bridging thoughts and numeric operations in a confusing/tangled way.
-- `OTHER`: Upto your expertise :D
+### 2. Validate the Confidence Scores
+We need to prove that our confidence scores mean something!
+- When you find a step that contains a **logical or mathematical error**, check its confidence score. Is it noticeably lower (e.g., `0.10`)?
+- When a step is **perfectly correct**, is the score higher (e.g., `0.85`)?
+- **Log your findings.** If the scores do not correlate with correctness, we will need to tweak the scoring logic in Phase 2.
 
-**Feedback Loop:** Log these failures and pass them back to the prompt engineering / infra side. If you are Intern 2, you will use these findings to directly iterate on `src/prompts.py` and `src/fallback.py`.
+### 3. Categorize Failure Types
+If the model failed to generate proper steps entirely, categorize the failure:
+- `NO_SEPARATION`: All text dumped into a single step.
+- `MALFORMED_JSON`: Failed to adhere to the schema constraint.
+- `MIXED_CONTENT`: Bridging thoughts and numeric operations are tangled.
 
-### 3. Maintain the Pass/Fail Tracking Sheet if possible/required
-Keep a simple spreadsheet (e.g., Google Sheets or a local CSV) tracking the pilot batch. For each sample, log:
-- `Dataset` (GSM8K, HotpotQA, MuSiQue)
-- `Sample ID`
-- `Pass/Fail`
-- `Failure Category` (if applicable)
-- `Notes`
+Track all of this in a shared spreadsheet (Dataset, Sample ID, Pass/Fail, Failure Category, Score Correlation Notes) so the prompt engineering team can iterate.
 
 ---
 
 ## Running the Codebase
 
-If you need to re-run the batch generation or test a new prompt:
+### 1. Setup
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-1. **Activate the Environment:**
-   ```bash
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+### 2. Run Phase 1 (Batch Generation)
+Generates the base CoT drafts for a dataset.
+```bash
+python src/batch_runner.py --dataset gsm8k --n 10
+```
 
-2. **Run a Batch:**
-   You can run the batch scripts directly to process new questions or re-test failed ones after tweaking the prompts.
-   ```bash
-   python src/batch_runner.py --dataset gsm8k --samples 50
-   ```
+### 3. Run Phase 2 (Confidence Scoring)
+Scores the drafts generated by Phase 1. 
+*(Warning: The `sampling` or `both` method is extremely slow locally. Use `logprob` for fast testing).*
+```bash
+# Fast execution (Token Probabilities)
+python src/confidence/run_scoring.py --dataset gsm8k --n 5 --method logprob
 
-3. **Check Outputs:**
-   Results will be saved sequentially into the `outputs/` folder for review.
-
-Incase any troubles regarding model setup is encountererd, please let us know!
+# Slow execution (Consistency Sampling)
+python src/confidence/run_scoring.py --dataset gsm8k --n 5 --method sampling
+```

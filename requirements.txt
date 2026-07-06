@@ -2,3 +2,8 @@ outlines
 requests
 datasets
 pydantic
+transformers
+torch
+bert-score
+accelerate
+sentencepiece
