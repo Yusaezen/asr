@@ -1,9 +1,9 @@
 # Adaptive Speculative Reasoning
 
-This repository contains the infrastructure, prompt designs, and evaluation harnesses to explore structured Chain-of-Thought (CoT) generation and step-wise confidence scoring across reasoning datasets (GSM8K, HotpotQA, MuSiQue).
+Welcome to the Adaptive Speculative Reasoning project! This repository contains the infrastructure, prompt designs, and evaluation harnesses to explore structured Chain-of-Thought (CoT) generation and step-wise confidence scoring across reasoning datasets (GSM8K, HotpotQA, MuSiQue, StrategyQA).
 
 ## Current Project Phase
-We have successfully completed **Phase 1** (Generation Infrastructure & Prompting) and the initial parts of **Phase 2** (Confidence Scoring). We are now officially entering **Phase 3: Manual QA & Data Curation**, where we must manually evaluate the generations and validate if our confidence scores actually correlate with correct reasoning.
+We have successfully completed **Phase 1** (Generation Infrastructure & Prompting) and **Phase 2** (Confidence Scoring & NLI Correctness Checking). We are now officially entering **Phase 3: Automated QA & Correlation Analysis**, where we will merge the generated metrics to validate if our confidence scores actually correlate with correct reasoning.
 
 ---
 
@@ -12,43 +12,44 @@ We have successfully completed **Phase 1** (Generation Infrastructure & Promptin
 ### Phase 1: Infrastructure & Prompt Design (Completed)
 - **Local Model Setup:** A 7B model is integrated via HF in `src/model_client.py`.
 - **Generation Harness (`src/generation_harness.py`):** The core pipeline that accepts a question, runs the model, and returns a cleanly parsed list of steps.
-- **Structured Outputs & Parsing (`src/schema.py`, `src/step_parser.py`):** Forces the model to separate its reasoning steps reliably.
-- **Few-Shot Prompting (`src/prompts.py`):** Tailored few-shot exemplars designed specifically for step-formatted CoT generation per dataset.
+- **Structured Outputs & Parsing (`src/schema.py`, `src/step_parser.py`):** Forces the model to separate its reasoning steps reliably using strict JSON schemas.
 - **Fallback Logic (`src/fallback.py`):** Custom engineering that handles and segments outputs when structured generation fails.
+- **Batch Generation (`src/batch_runner.py`):** Generates drafts for subsets of questions, pulling from dataset loaders. Note that any `batch_failures.json` generated here refers *only* to formatting/JSON structure failures, not logic failures.
 
-### Phase 2: Confidence Scoring (Completed)
-We have implemented a system to attach a numerical confidence score to every single reasoning step generated in Phase 1 (`src/confidence/`). The model isn't explicitly trained to output confidence; instead, we extract it using two methods:
-1. **Logprob Scorer (`logprob_scorer.py`):** Extracts the model's raw next-token probabilities for a given step, averages them, and normalizes the score to `[0, 1]`. (Fast)
-2. **Sampling Scorer (`sampling_scorer.py`):** Generates a step multiple times to measure the model's consistency and agreement with itself. (Very compute-heavy/slow)
+### Phase 2: Confidence Scoring & Correctness Checking (Completed)
+This phase evaluates the generated steps post-hoc. It is split into two independent modules that output JSON files:
 
-Outputs from these scorers are saved in `outputs/<dataset>_confidence_scores.json`.
+**1. Confidence Scoring (`src/confidence/`)**
+Attaches a numerical confidence score to every single reasoning step generated in Phase 1 without a specifically fine-tuned evaluator. 
+- **Logprob Scorer:** A fast method that extracts the model's raw next-token probabilities for a given step, averages them, and normalizes the score to `[0, 1]`. 
+- **Sampling Scorer:** A heavy compute method that generates a step multiple times to measure the model's consistency and agreement with itself.
+*(Outputs saved as `outputs/<dataset>_confidence_scores.json`)*
+
+**2. Automated Correctness Checking (`src/correctness/`)**
+*(Recently added)*: Instead of requiring a human to manually read every step to see if it is logically sound, this module automates the QA process. 
+- It loads the steps generated in the confidence JSON.
+- For text datasets (HotpotQA, StrategyQA), it uses a Natural Language Inference (NLI) model to compare the generated step against the "gold evidence facts" provided by the dataset.
+- It assigns a label (`correct` (entailment), `incorrect` (contradiction), or `ambiguous` (neutral)) to every single step automatically.
+*(Outputs saved as `outputs/<dataset>_correctness_labels.json`)*
 
 ---
 
-## Next Steps: Phase 3 (Manual QA & Data Curation)
+## Next Step to focus on  : Correlation Analysis & Manual Review
 
-With the pilot generation and scoring complete, the immediate next goal is for the QA team to evaluate the outputs. **If you are stepping in to run QA, please follow this workflow:**
+With the pilot generation, confidence scoring, and automated correctness labeling complete, the next objective (The QA Task) is to analyze the data.
 
-### 1. Inspect the Scored Outputs
-Navigate to the `outputs/` folder and open the `_confidence_scores.json` files. These contain the generated step lists alongside their `confidence_logprob` (and/or `confidence_sampling`) scores.
+### 1. Merge the JSONs
+You now have two files for a dataset:
+1. `outputs/<dataset>_confidence_scores.json` (Contains the `0.0 to 1.0` certainty scores).
+2. `outputs/<dataset>_correctness_labels.json` (Contains the `correct/incorrect` NLI labels).
 
-Evaluate the model on the following criteria:
-- **Separability:** Are steps properly separated, or are multiple steps merged together?
-- **Completeness & Accuracy:** Are there any missing logical steps, and is the math/logic actually correct?
+**Your task is to write a script to merge these files on `(sample_id, step_id)`.** 
 
-### 2. Validate the Confidence Scores
-We need to prove that our confidence scores mean something!
-- When you find a step that contains a **logical or mathematical error**, check its confidence score. Is it noticeably lower (e.g., `0.10`)?
-- When a step is **perfectly correct**, is the score higher (e.g., `0.85`)?
-- **Log your findings.** If the scores do not correlate with correctness, we will need to tweak the scoring logic in Phase 2.
-
-### 3. Categorize Failure Types
-If the model failed to generate proper steps entirely, categorize the failure:
-- `NO_SEPARATION`: All text dumped into a single step.
-- `MALFORMED_JSON`: Failed to adhere to the schema constraint.
-- `MIXED_CONTENT`: Bridging thoughts and numeric operations are tangled.
-
-Track all of this in a shared spreadsheet (Dataset, Sample ID, Pass/Fail, Failure Category, Score Correlation Notes) so the prompt engineering team can iterate.
+### 2. Validate the Correlation
+We need to prove that our confidence scores actually mean something!
+- When the NLI checker flags a step as `incorrect`, does the corresponding `confidence_logprob` score consistently drop (e.g., `0.10`)?
+- When a step is flagged as `correct`, is the score consistently higher?
+- *Note: For math datasets like GSM8K where NLI doesn't work, manual review or a custom math-evaluator script is still required.*
 
 ---
 
@@ -63,16 +64,17 @@ pip install -r requirements.txt
 ### 2. Run Phase 1 (Batch Generation)
 Generates the base CoT drafts for a dataset.
 ```bash
-python src/batch_runner.py --dataset gsm8k --n 10
+python src/batch_runner.py --dataset hotpotqa --n 10
 ```
 
-### 3. Run Phase 2 (Confidence Scoring)
+### 3. Run Phase 2a (Confidence Scoring)
 Scores the drafts generated by Phase 1. 
-*(Warning: The `sampling` or `both` method is extremely slow locally. Use `logprob` for fast testing).*
 ```bash
-# Fast execution (Token Probabilities)
-python src/confidence/run_scoring.py --dataset gsm8k --n 5 --method logprob
+python src/confidence/run_scoring.py --dataset hotpotqa --n 10 --method logprob
+```
 
-# Slow execution (Consistency Sampling)
-python src/confidence/run_scoring.py --dataset gsm8k --n 5 --method sampling
+### 4. Run Phase 2b (Correctness Checking)
+Automatically grades the text logic using NLI. (Requires the confidence JSON to already exist).
+```bash
+python src/correctness/run_correctness.py --dataset hotpotqa
 ```
