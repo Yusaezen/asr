@@ -1,0 +1,9 @@
+{
+    "total_rows_after_filtering": 9,
+    "pearson_correlation": 0.11821585363080205,
+    "expected_calibration_error": 0.5608331111111111,
+    "average_confidence": {
+        "correct": 0.21796383333333333,
+        "incorrect": 0.194867
+    }
+}
