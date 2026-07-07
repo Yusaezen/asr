@@ -37,8 +37,8 @@ def get_model_and_tokenizer():
 
     _model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
-        torch_dtype=torch.float16,
-        device_map=device,
+        torch_dtype=torch.float32,
+        device_map="auto",
     )
     _model.eval()
     logger.info("Model loaded.")

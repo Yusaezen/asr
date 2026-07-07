@@ -92,8 +92,9 @@ def score_steps_logprob(
             tokenizer=tokenizer,
             device=device,
         )
-        score = _sigmoid(mean_lp)
-        scores.append(round(score, 4))
+        #score = _sigmoid(mean_lp)
+        score = math.exp(mean_lp)
+        scores.append(round(score, 6))
         logger.debug(f"Step {step['step_id']}: mean_lp={mean_lp:.4f}, score={score:.4f}")
         # Extend context with this step for next iteration
         context += step_text
