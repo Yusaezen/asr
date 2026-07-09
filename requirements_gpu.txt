@@ -1,0 +1,26 @@
+# ASR project — Ubuntu GPU requirements
+# Install with: pip install -r requirements.txt
+
+# Core
+requests
+pydantic
+
+# HuggingFace stack
+transformers>=4.40.0
+datasets
+huggingface_hub
+accelerate          # required for device_map="auto"
+sentencepiece       # Mistral tokenizer
+protobuf
+
+# PyTorch — install the CUDA version separately (see setup instructions)
+# Do NOT install via this file — torch must be installed with CUDA wheel
+
+# Confidence scoring
+bert-score
+
+# NLI correctness checker
+# (DeBERTa-v3-base — downloaded automatically by nli_model.py)
+
+# Data
+openpyxl
