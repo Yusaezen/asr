@@ -1,10 +1,16 @@
 """
-confidence/run_scoring.py — Fix 6: default n raised to 50.
+confidence/run_scoring.py  (updated for Phase 2 UHead)
 
-Now that GPU eliminates timeouts and the RobertaModel reload is fixed,
-running on 50 samples is feasible and gives Intern 3 enough data for
-meaningful calibration analysis (ECE, reliability diagrams).
-Default kept at 50; pass --n to override.
+Loads batch_results_{dataset}.json, runs UHead confidence scorer per step,
+saves annotated output for Intern 3's calibration analysis.
+
+Usage:
+    python run_scoring.py --dataset hotpotqa --n 500
+    python run_scoring.py --dataset gsm8k --n 200
+
+    # Ablation baselines (slow — only for comparison):
+    # python run_scoring.py --dataset gsm8k --method logprob --n 50
+    # python run_scoring.py --dataset gsm8k --method sampling --n 50
 """
 import argparse
 import json
@@ -29,61 +35,65 @@ def load_batch_results(dataset: str) -> list:
     path = OUTPUTS_DIR / f"batch_results_{dataset}.json"
     if not path.exists():
         raise FileNotFoundError(
-            f"No batch results found at {path}.\n"
-            f"Run Phase 1 first: python batch_runner.py --dataset {dataset} --n 50"
+            f"No batch results at {path}.\n"
+            f"Run: python batch_runner.py --dataset {dataset} --n 700"
         )
     with open(path) as f:
         return json.load(f)
 
 
-def run_scoring(dataset: str, n: int, method: str):
+def run_scoring(dataset: str, n: int, method: str = "uhead"):
     OUTPUTS_DIR.mkdir(exist_ok=True)
-
-    all_samples = load_batch_results(dataset)
-    # Skip samples that errored in Phase 1 (no steps)
-    samples = [s for s in all_samples if s.get("steps")][:n]
-    logger.info(f"Scoring {len(samples)} samples from {dataset} using method={method}")
+    samples = load_batch_results(dataset)[:n]
+    logger.info(f"Scoring {len(samples)} {dataset} samples with method={method}")
 
     results = []
 
     for i, sample in enumerate(samples):
-        question  = sample["question"]
-        steps     = sample.get("steps", [])
+        question = sample["question"]
+        steps = sample.get("steps", [])
         sample_id = sample.get("sample_id", str(i))
 
         logger.info(f"[{i+1}/{len(samples)}] {question[:60]}...")
 
         if not steps:
-            logger.warning(f"No steps for sample {sample_id}, skipping.")
+            logger.warning(f"No steps for {sample_id}, skipping.")
             continue
 
         try:
             scores = score_steps(question, steps, method=method)
         except Exception as e:
-            logger.error(f"Scoring failed for sample {sample_id}: {e}", exc_info=True)
+            logger.error(f"Scoring failed for {sample_id}: {e}")
             scores = {"error": str(e)}
 
         annotated_steps = []
         for step in steps:
+            idx = step["step_id"] - 1
             entry = {"step_id": step["step_id"], "content": step["content"]}
-            if method == "both" and isinstance(scores, dict) and "logprob" in scores:
-                idx = step["step_id"] - 1
-                entry["confidence_logprob"]  = scores["logprob"][idx]  if idx < len(scores["logprob"])  else None
+
+            if method == "uhead" and isinstance(scores, list):
+                entry["confidence_uhead"] = scores[idx] if idx < len(scores) else None
+
+            elif method == "both" and isinstance(scores, dict):
+                # Ablation: logprob + sampling scores together
+                entry["confidence_logprob"] = scores["logprob"][idx] if idx < len(scores["logprob"]) else None
                 entry["confidence_sampling"] = scores["sampling"][idx] if idx < len(scores["sampling"]) else None
+
             elif isinstance(scores, list):
-                idx = step["step_id"] - 1
+                # logprob or sampling individually
                 entry[f"confidence_{method}"] = scores[idx] if idx < len(scores) else None
+
             annotated_steps.append(entry)
 
         results.append({
-            "sample_id":   sample_id,
-            "dataset":     dataset,
-            "question":    question,
-            "complexity":  sample.get("complexity",   "unknown"),
+            "sample_id": sample_id,
+            "dataset": dataset,
+            "question": question,
+            "complexity": sample.get("complexity", "unknown"),
             "final_answer": sample.get("final_answer", ""),
             "ground_truth": sample.get("ground_truth", ""),
             "parse_method": sample.get("parse_method", "unknown"),
-            "steps":        annotated_steps,
+            "steps": annotated_steps,
         })
 
     out_path = OUTPUTS_DIR / f"{dataset}_confidence_scores.json"
@@ -92,27 +102,30 @@ def run_scoring(dataset: str, n: int, method: str):
 
     logger.info(f"Saved {len(results)} scored samples → {out_path}")
 
-    if results:
-        all_lp, all_samp = [], []
-        for r in results:
-            for s in r["steps"]:
-                if s.get("confidence_logprob")  is not None: all_lp.append(s["confidence_logprob"])
-                if s.get("confidence_sampling") is not None: all_samp.append(s["confidence_sampling"])
-        if all_lp:
-            logger.info(f"Logprob scores  — mean: {sum(all_lp)/len(all_lp):.4f}, "
-                        f"min: {min(all_lp):.4f}, max: {max(all_lp):.4f}")
-        if all_samp:
-            logger.info(f"Sampling scores — mean: {sum(all_samp)/len(all_samp):.4f}, "
-                        f"min: {min(all_samp):.4f}, max: {max(all_samp):.4f}")
-        logger.info(f"Next: run Intern 2 correctness checker — "
-                    f"python correctness/run_correctness.py --dataset {dataset}")
+    # Summary stats
+    all_scores = [
+        s.get("confidence_uhead") or s.get("confidence_logprob") or s.get(f"confidence_{method}")
+        for r in results for s in r["steps"]
+    ]
+    all_scores = [s for s in all_scores if s is not None]
+    if all_scores:
+        logger.info(
+            f"Confidence ({method}) — "
+            f"mean: {sum(all_scores)/len(all_scores):.4f}, "
+            f"min: {min(all_scores):.4f}, "
+            f"max: {max(all_scores):.4f}"
+        )
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", choices=["gsm8k", "hotpotqa", "musique"], default="gsm8k")
-    parser.add_argument("--n",      type=int, default=50,   help="Samples to score (default 50 on GPU)")
-    parser.add_argument("--method", choices=["logprob", "sampling", "both"], default="both")
+    parser.add_argument("--dataset", choices=["gsm8k", "hotpotqa", "musique"], required=True)
+    parser.add_argument("--n", type=int, default=500)
+    parser.add_argument(
+        "--method",
+        choices=["uhead", "logprob", "sampling", "both"],
+        default="uhead",
+        help="'uhead' is primary. logprob/sampling/both are ablation baselines."
+    )
     args = parser.parse_args()
-
     run_scoring(dataset=args.dataset, n=args.n, method=args.method)
