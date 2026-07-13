@@ -1,80 +1,93 @@
 """
-model_client.py — GPU-ready, timeout raised to 600s.
+model_client.py — HuggingFace backend (replaces Ollama).
 
-Fix 1: timeout raised from 120s → 600s (eliminates Ollama timeouts on GPU).
-Fix 2: comment updated — no longer macOS-only, works on Ubuntu + CUDA.
+Previously this module called the Ollama HTTP API at localhost:11434.
+That endpoint is an opaque text-in/text-out interface: it does NOT expose
+token-level hidden states, which are required by HiddenStateExtractor for
+UHead scoring.
+
+The replacement uses the HuggingFace model already loaded by
+confidence/model_loader.py (Mistral-7B-Instruct, 4-bit NF4 via bitsandbytes).
+Because both generation (here) and UHead scoring (scorer.py) now go through
+the same model instance, hidden-state distributions at training time and
+inference time are guaranteed to be consistent.
+
+Public API is unchanged so that generation_harness.py, batch_runner.py, and
+any other callers do not need to be modified:
+    generate(prompt, model, temperature, max_tokens, system_prompt) -> str
+    DEFAULT_MODEL                                                    -> str
+
+Removed (Ollama-specific, no longer applicable):
+    check_ollama_running()  — kept as a no-op stub for import compatibility
+    list_available_models() — kept as a stub returning [DEFAULT_MODEL]
 """
-import requests
-import json
 import logging
+import sys
+from pathlib import Path
 from typing import Optional
+
+# Ensure confidence/ is importable when this module is called from src/
+sys.path.insert(0, str(Path(__file__).parent))
+
+from confidence.model_loader import generate_text, MODEL_ID
 
 logger = logging.getLogger(__name__)
 
-OLLAMA_BASE_URL = "http://localhost:11434"
-DEFAULT_MODEL   = "mistral:7b-instruct-q4_K_M"
+# Expose the HuggingFace model ID as DEFAULT_MODEL so call sites
+# (generation_harness.py, batch_runner.py) that reference model_client.DEFAULT_MODEL
+# continue to work without changes.
+DEFAULT_MODEL = MODEL_ID
 
+
+# ── Compatibility stubs (previously Ollama-specific) ──────────────────────────
 
 def check_ollama_running() -> bool:
-    try:
-        r = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=5)
-        return r.status_code == 200
-    except requests.exceptions.ConnectionError:
-        return False
+    """
+    Stub retained for import compatibility with generation_harness.py.
+    Always returns True — Ollama is no longer used; the HuggingFace model
+    is loaded on first call to generate().
+    """
+    return True
 
 
 def list_available_models() -> list:
-    try:
-        r = requests.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=5)
-        if r.status_code == 200:
-            return [m["name"] for m in r.json().get("models", [])]
-        return []
-    except Exception:
-        return []
+    """
+    Stub retained for import compatibility.
+    Returns the single HuggingFace model in use.
+    """
+    return [DEFAULT_MODEL]
 
+
+# ── Main generation function ───────────────────────────────────────────────────
 
 def generate(
     prompt: str,
-    model: str = DEFAULT_MODEL,
+    model: str = DEFAULT_MODEL,       # kept for API compatibility; value ignored
     temperature: float = 0.2,
     max_tokens: int = 1024,
     system_prompt: Optional[str] = None,
 ) -> str:
     """
-    Call Ollama /api/generate and return the full response string.
-    Timeout raised to 600s for GPU generation (was 120s → caused timeouts on
-    complex GSM8K questions with 4+ steps on CPU).
+    Generate a response using the unified HuggingFace model.
+
+    The `model` argument is accepted for API compatibility but is ignored —
+    the model loaded by confidence/model_loader.py (MODEL_ID) is always used.
+
+    Delegates entirely to confidence.model_loader.generate_text() so that
+    the HuggingFace singleton is shared between generation and UHead scoring,
+    ensuring consistent hidden-state distributions.
     """
-    if not check_ollama_running():
-        raise ConnectionError(
-            "Ollama is not running. Start it with: ollama serve"
+    if model != DEFAULT_MODEL:
+        logger.warning(
+            f"model_client.generate() received model='{model}' but the "
+            f"HuggingFace backend always uses '{DEFAULT_MODEL}'. "
+            f"The requested model identifier will be ignored."
         )
 
-    payload = {
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        "options": {
-            "temperature": temperature,
-            "num_predict": max_tokens,
-        },
-    }
-    if system_prompt:
-        payload["system"] = system_prompt
-
-    try:
-        r = requests.post(
-            f"{OLLAMA_BASE_URL}/api/generate",
-            json=payload,
-            timeout=600,          # raised from 120 → 600
-        )
-        r.raise_for_status()
-        return r.json().get("response", "")
-    except requests.exceptions.Timeout:
-        raise TimeoutError(
-            f"Ollama timed out generating response for model {model}. "
-            f"On GPU this should not happen — check that Ollama is using the GPU "
-            f"(run: ollama ps  or  nvidia-smi while generating)."
-        )
-    except requests.exceptions.HTTPError as e:
-        raise RuntimeError(f"Ollama API error: {e}")
+    logger.info(f"Generating via HuggingFace ({DEFAULT_MODEL}) — temperature={temperature}")
+    return generate_text(
+        prompt=prompt,
+        system_prompt=system_prompt,
+        temperature=temperature,
+        max_new_tokens=max_tokens,
+    )

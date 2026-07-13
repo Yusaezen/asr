@@ -1,2 +1,2 @@
-from .scorer import score_steps_uhead
-from .model import UHead
+# Lazy imports — don't import scorer at module load time to avoid
+# circular import chain when train.py imports uhead.model directly.

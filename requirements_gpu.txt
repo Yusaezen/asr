@@ -12,6 +12,7 @@ huggingface_hub
 accelerate          # required for device_map="auto"
 sentencepiece       # Mistral tokenizer
 protobuf
+bitsandbytes        # 4-bit NF4 quantization (replaces Ollama for generation)
 
 # PyTorch — install the CUDA version separately (see setup instructions)
 # Do NOT install via this file — torch must be installed with CUDA wheel

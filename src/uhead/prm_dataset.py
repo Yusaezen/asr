@@ -1,14 +1,15 @@
 """
 uhead/prm_dataset.py
 
-Loads PRM800K from HuggingFace and builds a PyTorch Dataset that yields
-(hidden_state, label) pairs for UHead training.
+Loads trl-lib/prm800k and builds hidden state cache for UHead pretraining.
 
-Since PRM800K provides text steps (not hidden states), we extract hidden
-states on-the-fly during a pre-processing pass using the frozen Mistral model,
-then cache them to disk so training epochs don't re-run inference.
+Actual schema (trl-lib/prm800k):
+    - prompt:      str   — the math problem
+    - completions: list of str — one string per reasoning step
+    - labels:      list of bool — True=correct, False=incorrect per step
 
-Cache path: outputs/prm800k_hidden_states.pt
+Cache: outputs/prm800k_hidden_states.pt
+  → {"states": [N, 4096], "labels": [N]}  (one row per step, not per problem)
 """
 import logging
 import torch
@@ -19,17 +20,7 @@ from typing import Optional
 logger = logging.getLogger(__name__)
 
 CACHE_PATH = Path(__file__).parent.parent.parent / "outputs" / "prm800k_hidden_states.pt"
-HF_DATASET_ID = "rawsh/mirrorgemma-2-2b-prm800k-data"  # PRM800K-compatible mirror
-# Alternative if above fails: "lkevinzc/prm800k-v2"
-
-
-def _rating_to_label(rating) -> Optional[float]:
-    """PRM800K uses +1 (correct) / -1 (incorrect) / 0 (neutral). Map to binary."""
-    if rating == 1:
-        return 1.0
-    elif rating == -1:
-        return 0.0
-    return None  # skip neutral
+HF_DATASET_ID = "trl-lib/prm800k"
 
 
 def build_hidden_state_cache(
@@ -40,21 +31,16 @@ def build_hidden_state_cache(
     split: str = "train",
 ) -> None:
     """
-    Runs a single forward pass per step, extracts last-token hidden state
-    from layer -1, and saves (states, labels) tensors to CACHE_PATH.
-
-    limit: cap at this many samples (full PRM800K ~800K; 50K is enough for
-           a strong baseline and fits in reasonable time on M2).
+    Iterates PRM800K problems. For each problem, iterates its steps.
+    Builds cumulative context (prompt + prior steps + current step),
+    runs through frozen Mistral, extracts last-token hidden state from layer -1.
+    Stops after `limit` total steps (not problems).
     """
     from datasets import load_dataset
     from uhead.extractor import HiddenStateExtractor
 
-    logger.info(f"Loading PRM800K [{split}] from HuggingFace (limit={limit})...")
-    try:
-        ds = load_dataset(HF_DATASET_ID, split=split)
-    except Exception:
-        logger.warning(f"Primary PRM800K source failed, trying fallback...")
-        ds = load_dataset("lkevinzc/prm800k-v2", split=split)
+    logger.info(f"Loading {HF_DATASET_ID} [{split}] (limit={limit} steps)...")
+    ds = load_dataset(HF_DATASET_ID, split=split)
 
     CACHE_PATH.parent.mkdir(exist_ok=True)
     extractor = HiddenStateExtractor(model)
@@ -62,62 +48,70 @@ def build_hidden_state_cache(
 
     all_states, all_labels = [], []
     skipped = 0
+    total_steps = 0
 
     logger.info("Extracting hidden states from PRM800K steps...")
     with extractor:
-        for i, row in enumerate(ds):
-            if i >= limit:
+        for row_idx, row in enumerate(ds):
+            if total_steps >= limit:
                 break
 
-            # PRM800K schema: 'steps' is a list of {'text': str, 'rating': int}
-            steps = row.get("steps", [])
-            if not steps:
-                # Some mirrors use 'completions' or flat fields
-                text = row.get("text") or row.get("step", "")
-                rating = row.get("label") or row.get("rating")
-                steps = [{"text": text, "rating": rating}] if text else []
+            prompt = row.get("prompt", "")
+            completions = row.get("completions", [])   # list of step strings
+            labels = row.get("labels", [])             # list of bool
 
-            for step in steps:
-                text = step.get("text", "").strip()
-                rating = step.get("rating")
-                label = _rating_to_label(rating)
+            if not completions or not labels:
+                skipped += 1
+                continue
 
-                if not text or label is None:
+            # Build context cumulatively: prompt + all steps up to current
+            context = prompt.strip() + "\n"
+
+            for step_idx, (step_text, label) in enumerate(zip(completions, labels)):
+                if total_steps >= limit:
+                    break
+
+                if label is None:
                     skipped += 1
                     continue
 
+                full_text = context + f"Step {step_idx + 1}: {step_text.strip()}"
+
                 inputs = tokenizer(
-                    text,
+                    full_text,
                     return_tensors="pt",
                     truncation=True,
-                    max_length=256,
+                    max_length=512,
                 ).to(device)
 
                 with torch.no_grad():
-                    _ = model(**inputs, output_hidden_states=True)
+                    _ = model(**inputs)   # hook fires
 
                 state = extractor.last_token_state()   # [hidden_dim]
-                all_states.append(state)
-                all_labels.append(torch.tensor(label, dtype=torch.float32))
+                all_states.append(state.float())
+                all_labels.append(torch.tensor(1.0 if label else 0.0))
+                extractor._states.clear()
 
-            if i % 500 == 0:
-                logger.info(f"  Processed {i} rows, {len(all_states)} steps so far...")
+                # Extend context for next step
+                context += f"Step {step_idx + 1}: {step_text.strip()}\n"
+                total_steps += 1
 
-    states_tensor = torch.stack(all_states)    # [N, hidden_dim]
-    labels_tensor = torch.stack(all_labels)    # [N]
+            if row_idx % 200 == 0:
+                logger.info(f"  Row {row_idx}, steps so far: {total_steps}")
 
+    if not all_states:
+        raise RuntimeError("No steps extracted — check dataset schema.")
+
+    states_tensor = torch.stack(all_states)
+    labels_tensor = torch.stack(all_labels)
     torch.save({"states": states_tensor, "labels": labels_tensor}, CACHE_PATH)
     logger.info(
         f"Cache saved → {CACHE_PATH}\n"
-        f"  Total steps: {len(all_states)}, skipped (neutral/empty): {skipped}"
+        f"  Steps cached: {len(all_states)}, skipped: {skipped}"
     )
 
 
 class PRM800KDataset(Dataset):
-    """
-    Loads pre-extracted (hidden_state, label) pairs from cache.
-    Call build_hidden_state_cache() first if cache doesn't exist.
-    """
     def __init__(self, cache_path: Path = CACHE_PATH):
         if not cache_path.exists():
             raise FileNotFoundError(
@@ -125,8 +119,8 @@ class PRM800KDataset(Dataset):
                 f"Run: python uhead/train.py --build-cache"
             )
         data = torch.load(cache_path, map_location="cpu")
-        self.states = data["states"]   # [N, hidden_dim]
-        self.labels = data["labels"]   # [N]
+        self.states = data["states"]
+        self.labels = data["labels"]
         logger.info(f"Loaded PRM800K cache: {len(self.states)} steps.")
 
     def __len__(self):

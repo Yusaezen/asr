@@ -1,13 +1,18 @@
 """
-generation_harness.py — Fix 2: complexity classifier recalibrated for GSM8K.
+generation_harness.py — HuggingFace backend (Ollama removed).
 
-The original classifier used keyword counting which over-called everything
-"complex" on GSM8K (rated all 10 questions complex; gold-complexity match
-only 2/7). Root cause: math questions are short but use the same hop-keywords
-as the question-type check. Fix: dataset-aware routing — GSM8K uses a
-step-count heuristic based on the number of arithmetic operations implied
-(number of numeric values in the question), all other datasets use the
-existing keyword heuristic.
+Previously this module used Ollama (via model_client.py) for CoT generation.
+Ollama is an opaque HTTP endpoint that does not expose hidden states, which
+are required by UHead for step-level confidence scoring.
+
+model_client.py now delegates to confidence/model_loader.py, which loads
+Mistral-7B-Instruct in 4-bit NF4 quantization via bitsandbytes. This gives
+the same ~4-5 GB memory footprint as Ollama while keeping full HuggingFace
+Transformers access (forward hooks, output_hidden_states, model.generate).
+
+Complexity classifier (Fix 2, unchanged):
+    GSM8K uses a step-count heuristic based on the number of distinct numeric
+    values in the question. All other datasets use the original keyword heuristic.
 """
 import json
 import logging
@@ -116,18 +121,9 @@ def run(
     temperature: float = 0.2,
     output_path: Optional[str] = None,
 ) -> dict:
-    if not check_ollama_running():
-        raise ConnectionError(
-            f"Ollama is not running. Start it with: ollama serve\n"
-            f"Then pull the model: ollama pull {model}"
-        )
-
-    available = list_available_models()
-    if model not in available:
-        logger.warning(
-            f"Model '{model}' not found in Ollama. Available: {available}\n"
-            f"Pull it with: ollama pull {model}"
-        )
+    # HuggingFace model loads lazily on first call — no connectivity check needed.
+    # The `model` argument is accepted for API compatibility; model_client.py
+    # always uses the HuggingFace singleton (Mistral-7B-Instruct-v0.2, 4-bit NF4).
 
     # Fix 2: pass dataset into classifier
     complexity, n_steps = classify_complexity(question, dataset=dataset)

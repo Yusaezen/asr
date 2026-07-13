@@ -1,80 +1,97 @@
 # Adaptive Speculative Reasoning
 
-Welcome to the Adaptive Speculative Reasoning project! This repository contains the infrastructure, prompt designs, and evaluation harnesses to explore structured Chain-of-Thought (CoT) generation and step-wise confidence scoring across reasoning datasets (GSM8K, HotpotQA, MuSiQue, StrategyQA).
+Welcome to the Adaptive Speculative Reasoning project! This repository contains the infrastructure, prompt designs, evaluation harnesses, and speculative model heads to explore structured Chain-of-Thought (CoT) generation, step-wise confidence scoring, and automated correctness verification.
+
+---
 
 ## Current Project Phase
-We have successfully completed **Phase 1** (Generation Infrastructure & Prompting) and **Phase 2** (Confidence Scoring & NLI Correctness Checking). We are now officially entering **Phase 3: Automated QA & Correlation Analysis**, where we will merge the generated metrics to validate if our confidence scores actually correlate with correct reasoning.
+We have successfully completed:
+1. **Phase 1 (Generation Infrastructure & Prompting)**
+2. **Phase 2 (Confidence Scoring & NLI Correctness Checking)**
+
+We are now currently working on a mitigation plan owing to Token Log Probability's failure to correctly score step level confidence.
+Thus we have another sub-phase, mb sorry :
+ - **Phase 2.1 (UHead Training & Core Model Migration)**
+---
+
+## 1. UHead Architecture
+* **UHead** is a lightweight, multi-layer perceptron (MLP) binary classifier head trained on top of the frozen main model's final-layer token hidden states to predict the probability of step-wise correctness.
+* The architecture utilizes sigmoid activation to yield a certainty score in the range `[0, 1]`.
+* Basically training a very basic neural network to look at the hidden state vectors of the final token of each step at the last layer [-1] to determine whether or not the model is confident in this reasoning step. Should've done this first, would've saved time and effort ;_;
 
 ---
 
-## What Has Been Built 
+## 2. Core Codebase Migrations & Integrations
 
-### Phase 1: Infrastructure & Prompt Design (Completed)
-- **Local Model Setup:** A 7B model is integrated via HF in `src/model_client.py`.
-- **Generation Harness (`src/generation_harness.py`):** The core pipeline that accepts a question, runs the model, and returns a cleanly parsed list of steps.
-- **Structured Outputs & Parsing (`src/schema.py`, `src/step_parser.py`):** Forces the model to separate its reasoning steps reliably using strict JSON schemas.
-- **Fallback Logic (`src/fallback.py`):** Custom engineering that handles and segments outputs when structured generation fails.
-- **Batch Generation (`src/batch_runner.py`):** Generates drafts for subsets of questions, pulling from dataset loaders. Note that any `batch_failures.json` generated here refers *only* to formatting/JSON structure failures, not logic failures.
+### Transition from Ollama to Hugging Face
+* **Motivation**: The previous setup called the Ollama API, which is an opaque HTTP endpoint. Ollama does not expose token-level hidden states, making it impossible to perform step-wise UHead scoring or hook activation.
+* **Unified Model Loader ([model_loader.py](file:///Users/vbaalaadityaa/Downloads/summer-research/adaptive-speculative-reasoning/src/confidence/model_loader.py))**: Loads `Mistral-7B-Instruct` locally. To match the low memory footprint of Ollama (~4–5 GB), it implements 4-bit NF4 quantization using `bitsandbytes` (falling back to float16 on CPU/macOS if unavailable).
+* **Shared Singleton Instance**: Text generation ([model_client.py](file:///Users/vbaalaadityaa/Downloads/summer-research/adaptive-speculative-reasoning/src/model_client.py)) and hidden state extraction share the exact same model instance. This guarantees that hidden-state distributions are identical at both training time and inference time.
+* **Forward Hooks ([extractor.py](file:///Users/vbaalaadityaa/Downloads/summer-research/adaptive-speculative-reasoning/src/uhead/extractor.py))**: Introduces a context manager that registers PyTorch forward hooks on the model's final layer, extracting the hidden state of the final token in each reasoning step.
+* **Compatibility Stubs**: Kept Ollama stubs (`check_ollama_running`, `list_available_models`) as mocks in `model_client.py` so that external scripts do not break.
 
-### Phase 2: Confidence Scoring & Correctness Checking (Completed)
-This phase evaluates the generated steps post-hoc. It is split into two independent modules that output JSON files:
-
-**1. Confidence Scoring (`src/confidence/`)**
-Attaches a numerical confidence score to every single reasoning step generated in Phase 1 without a specifically fine-tuned evaluator. 
-- **Logprob Scorer:** A fast method that extracts the model's raw next-token probabilities for a given step, averages them, and normalizes the score to `[0, 1]`. 
-- **Sampling Scorer:** A heavy compute method that generates a step multiple times to measure the model's consistency and agreement with itself.
-*(Outputs saved as `outputs/<dataset>_confidence_scores.json`)*
-
-**2. Automated Correctness Checking (`src/correctness/`)**
-*(Recently added)*: Instead of requiring a human to manually read every step to see if it is logically sound, this module automates the QA process. 
-- It loads the steps generated in the confidence JSON.
-- For text datasets (HotpotQA, StrategyQA), it uses a Natural Language Inference (NLI) model to compare the generated step against the "gold evidence facts" provided by the dataset.
-- It assigns a label (`correct` (entailment), `incorrect` (contradiction), or `ambiguous` (neutral)) to every single step automatically.
-*(Outputs saved as `outputs/<dataset>_correctness_labels.json`)*
+### Remote & Pull Changes (Nithilan's commits)
+* **Timeout Extensions**: Raised Ollama-client/generation timeouts from `120s` to `600s` to prevent timeout failures during slow/multi-step reasoning generation.
+* **Platform/Device Auto-mapping**: Standardized device mapping across CPU, CUDA, and MPS via `device_map="auto"` inside Hugging Face causal loaders.
 
 ---
 
-## Next Step to focus on  : Correlation Analysis & Manual Review
+## 3. Overall Flow of Operations
 
-With the pilot generation, confidence scoring, and automated correctness labeling complete, the next objective (The QA Task) is to analyze the data.
+Below is the sequential flow of commands to run the entire pipeline:
 
-### 1. Merge the JSONs
-You now have two files for a dataset:
-1. `outputs/<dataset>_confidence_scores.json` (Contains the `0.0 to 1.0` certainty scores).
-2. `outputs/<dataset>_correctness_labels.json` (Contains the `correct/incorrect` NLI labels).
-
-**Your task is to write a script to merge these files on `(sample_id, step_id)`.** 
-
-### 2. Validate the Correlation
-We need to prove that our confidence scores actually mean something!
-- When the NLI checker flags a step as `incorrect`, does the corresponding `confidence_logprob` score consistently drop (e.g., `0.10`)?
-- When a step is flagged as `correct`, is the score consistently higher?
-- *Note: For math datasets like GSM8K where NLI doesn't work, manual review or a custom math-evaluator script is still required.*
-
----
-
-## Running the Codebase
-
-### 1. Setup
+### Step A: Generate Base Reasoning Chain-of-Thought (CoT)
+Generates structured reasoning steps for a dataset and caches formatting/fallback results.
 ```bash
-source venv/bin/activate
-pip install -r requirements.txt
+# Run batch generation on 50 questions
+python src/batch_runner.py --dataset hotpotqa --n 50
 ```
 
-### 2. Run Phase 1 (Batch Generation)
-Generates the base CoT drafts for a dataset.
+### Step B: Run Unsupervised Confidence Scoring
+Calculates numerical baseline confidence metrics.
 ```bash
-python src/batch_runner.py --dataset hotpotqa --n 10
+# Evaluate step confidence using raw next-token log-probabilities
+python src/confidence/run_scoring.py --dataset hotpotqa --n 50 --method logprob
 ```
 
-### 3. Run Phase 2a (Confidence Scoring)
-Scores the drafts generated by Phase 1. 
+### Step C: Run Correctness Verification (NLI Grading)
+Evaluates step logic using a Natural Language Inference (DeBERTa-v3-mnli) cross-encoder model against gold-standard premises.
 ```bash
-python src/confidence/run_scoring.py --dataset hotpotqa --n 10 --method logprob
-```
-
-### 4. Run Phase 2b (Correctness Checking)
-Automatically grades the text logic using NLI. (Requires the confidence JSON to already exist).
-```bash
+# Label steps as 'correct' (entailed), 'incorrect' (contradicted), or 'ambiguous' (neutral)
 python src/correctness/run_correctness.py --dataset hotpotqa
 ```
+
+### Step D: Train and Fine-tune UHead
+
+#### 1. Cache PRM800K Hidden States
+Pre-extracts hidden states from the large-scale math reasoning dataset to accelerate training.
+```bash
+python src/uhead/train.py --build-cache --cache-limit 50000
+```
+
+#### 2. Pretrain UHead (Stage 1)
+Trains the UHead MLP classifier on the cached PRM800K hidden states.
+```bash
+python src/uhead/train.py --pretrain --epochs 3
+```
+
+#### 3. Build Domain Fine-Tuning Caches
+Caches the hidden states of domain datasets (GSM8K, HotpotQA) using the correctness labels graded by the NLI step (Step C). Ambiguous/unknown labels are automatically filtered out.
+```bash
+python src/uhead/train.py --finetune-cache --dataset gsm8k
+python src/uhead/train.py --finetune-cache --dataset hotpotqa
+```
+
+#### 4. Fine-tune UHead (Stage 2)
+Fine-tunes the pretrained UHead on target-domain labels.
+```bash
+python src/uhead/train.py --finetune --epochs 2
+```
+
+---
+
+## 4. Output Summary
+* **Base Generation**: `outputs/<dataset>_confidence_scores.json`
+* **NLI Labels**: `outputs/<dataset>_correctness_labels.json`
+* **Pretrained Checkpoint**: `outputs/uhead_pretrained.pt`
+* **Fine-tuned Checkpoint**: `outputs/uhead_finetuned.pt`
