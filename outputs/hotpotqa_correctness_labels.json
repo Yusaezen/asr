@@ -1,0 +1,1392 @@
+[
+  {
+    "sample_id": "5a8b57f25542995d1e6f1371",
+    "dataset": "hotpotqa",
+    "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Scott Derrickson (born July 16, 1966) is an American director, screenwriter and producer.",
+        "entailment_prob": 0.9978,
+        "neutral_prob": 0.0021,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Edward Davis Wood Jr. (October 10, 1924 \u2013 December 10, 1978) was an American filmmaker, actor, writer, producer, and director.",
+        "entailment_prob": 0.9969,
+        "neutral_prob": 0.0029,
+        "contradiction_prob": 0.0002
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a8c7595554299585d9e36b6",
+    "dataset": "hotpotqa",
+    "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Kiss and Tell is a 1945 American comedy film starring then 17-year-old Shirley Temple as Corliss Archer.",
+        "entailment_prob": 0.9982,
+        "neutral_prob": 0.0017,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " As an adult, she was named United States ambassador to Ghana and to Czechoslovakia and also served as Chief of Protocol of the United States.",
+        "entailment_prob": 0.0065,
+        "neutral_prob": 0.9911,
+        "contradiction_prob": 0.0024
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a85ea095542994775f606a8",
+    "dataset": "hotpotqa",
+    "question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Animorphs is a science fantasy series of young adult books written by Katherine Applegate and her husband Michael Grant, writing together under the name K. A. Applegate, and published by Scholastic.",
+        "entailment_prob": 0.7064,
+        "neutral_prob": 0.0044,
+        "contradiction_prob": 0.2891
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Animorphs is a science fantasy series of young adult books written by Katherine Applegate and her husband Michael Grant, writing together under the name K. A. Applegate, and published by Scholastic.",
+        "entailment_prob": 0.7064,
+        "neutral_prob": 0.0044,
+        "contradiction_prob": 0.2891
+      },
+      {
+        "step_id": 3,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Animorphs is a science fantasy series of young adult books written by Katherine Applegate and her husband Michael Grant, writing together under the name K. A. Applegate, and published by Scholastic.",
+        "entailment_prob": 0.0862,
+        "neutral_prob": 0.0079,
+        "contradiction_prob": 0.9059
+      }
+    ],
+    "gold_sentences_found": 5
+  },
+  {
+    "sample_id": "5adbf0a255429947ff17385a",
+    "dataset": "hotpotqa",
+    "question": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "The Laleli Mosque (Turkish: \"Laleli Camii, or Tulip Mosque\" ) is an 18th-century Ottoman imperial mosque located in Laleli, Fatih, Istanbul, Turkey.",
+        "entailment_prob": 0.9855,
+        "neutral_prob": 0.0144,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "The Esma Sultan Mansion (Turkish: \"Esma Sultan Yal\u0131s\u0131\" ), a historical yal\u0131 (English: waterside mansion ) located at Bosphorus in Ortak\u00f6y neighborhood of Istanbul, Turkey and named after its original owner Esma Sultan, is used today as a cultural center after being redeveloped.",
+        "entailment_prob": 0.9963,
+        "neutral_prob": 0.0033,
+        "contradiction_prob": 0.0004
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a8e3ea95542995a26add48d",
+    "dataset": "hotpotqa",
+    "question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Big Stone Gap is a 2014 American drama romantic comedy film written and directed by Adriana Trigiani and produced by Donna Gigliotti for Altar Identity Studios, a subsidiary of Media Society.",
+        "entailment_prob": 0.9983,
+        "neutral_prob": 0.0016,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Adriana Trigiani is an Italian American best-selling author of sixteen books, television writer, film director, and entrepreneur based in Greenwich Village, New York City.",
+        "entailment_prob": 0.996,
+        "neutral_prob": 0.0038,
+        "contradiction_prob": 0.0001
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5abd94525542992ac4f382d2",
+    "dataset": "hotpotqa",
+    "question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "2014 S/S is the debut album of South Korean group WINNER.",
+        "entailment_prob": 0.014,
+        "neutral_prob": 0.9859,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Winner (Hangul: \uc704\ub108), often stylized as WINNER, is a South Korean boy group formed in 2013 by YG Entertainment and debuted in 2014.",
+        "entailment_prob": 0.8308,
+        "neutral_prob": 0.138,
+        "contradiction_prob": 0.0312
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a85b2d95542997b5ce40028",
+    "dataset": "hotpotqa",
+    "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Management consulting is the practice of helping organizations to improve their performance, operating primarily through the analysis of existing organizational problems and the development of plans for improvement.",
+        "entailment_prob": 0.2241,
+        "neutral_prob": 0.2498,
+        "contradiction_prob": 0.5261
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Management consulting is the practice of helping organizations to improve their performance, operating primarily through the analysis of existing organizational problems and the development of plans for improvement.",
+        "entailment_prob": 0.0021,
+        "neutral_prob": 0.9971,
+        "contradiction_prob": 0.0008
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Management consulting is the practice of helping organizations to improve their performance, operating primarily through the analysis of existing organizational problems and the development of plans for improvement.",
+        "entailment_prob": 0.0003,
+        "neutral_prob": 0.9989,
+        "contradiction_prob": 0.0008
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a87ab905542996e4f3088c1",
+    "dataset": "hotpotqa",
+    "question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The team played its home games at the Androscoggin Bank Colis\u00e9e.",
+        "entailment_prob": 0.0029,
+        "neutral_prob": 0.997,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The team played its home games at the Androscoggin Bank Colis\u00e9e.",
+        "entailment_prob": 0.0002,
+        "neutral_prob": 0.9997,
+        "contradiction_prob": 0.0001
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a7bbb64554299042af8f7cc",
+    "dataset": "hotpotqa",
+    "question": "Who is older, Annie Morton or Terry Richardson?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Terrence \"Uncle Terry\" Richardson (born August 14, 1965) is an American fashion and portrait photographer who has shot advertising campaigns for Marc Jacobs, Aldo, Supreme, Sisley, Tom Ford, and Yves Saint Laurent among others.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0002,
+        "contradiction_prob": 0.9997
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a8db19d5542994ba4e3dd00",
+    "dataset": "hotpotqa",
+    "question": "Are Local H and For Against both from the United States?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Local H is an American rock band originally formed by guitarist and vocalist Scott Lucas, bassist Matt Garcia, drummer Joe Daniels, and lead guitarist John Sparkman in Zion, Illinois in 1987.",
+        "entailment_prob": 0.9977,
+        "neutral_prob": 0.0022,
+        "contradiction_prob": 0.0
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a7166395542994082a3e814",
+    "dataset": "hotpotqa",
+    "question": "What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " The main campus in Lawrence, one of the largest college towns in Kansas, is on Mount Oread, the highest elevation in Lawrence.",
+        "entailment_prob": 0.9082,
+        "neutral_prob": 0.0913,
+        "contradiction_prob": 0.0006
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " Two branch campuses are in the Kansas City metropolitan area: the Edwards Campus in Overland Park, and the university's medical school and hospital in Kansas City.",
+        "entailment_prob": 0.9946,
+        "neutral_prob": 0.0052,
+        "contradiction_prob": 0.0002
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " Two branch campuses are in the Kansas City metropolitan area: the Edwards Campus in Overland Park, and the university's medical school and hospital in Kansas City.",
+        "entailment_prob": 0.0004,
+        "neutral_prob": 0.9984,
+        "contradiction_prob": 0.0012
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a877e5d5542993e715abf7d",
+    "dataset": "hotpotqa",
+    "question": "What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and T\u00e9a Leoni?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " His film credits include \"The Family Man\" (2000), \"Evolution\" (2001), and \"\"When in Rome\"\" (2010).",
+        "entailment_prob": 0.0003,
+        "neutral_prob": 0.9968,
+        "contradiction_prob": 0.0029
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " His film credits include \"The Family Man\" (2000), \"Evolution\" (2001), and \"\"When in Rome\"\" (2010).",
+        "entailment_prob": 0.0012,
+        "neutral_prob": 0.0156,
+        "contradiction_prob": 0.9832
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "David Weissman is a screenwriter and director.",
+        "entailment_prob": 0.0005,
+        "neutral_prob": 0.9897,
+        "contradiction_prob": 0.0098
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5ab3b0bf5542992ade7c6e39",
+    "dataset": "hotpotqa",
+    "question": "What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " The song was sent out to radio stations in November 1999 as a promo for the soundtrack and the band.",
+        "entailment_prob": 0.0013,
+        "neutral_prob": 0.0414,
+        "contradiction_prob": 0.9573
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The film follows former New York Police Department detective Jericho Cane (Schwarzenegger) after he saves a banker (Byrne) from an assassin, finds himself embroiled in a religious conflict, and must protect an innocent young woman (Tunney) who is chosen by evil forces to conceive the Antichrist with Satan.",
+        "entailment_prob": 0.0004,
+        "neutral_prob": 0.9992,
+        "contradiction_prob": 0.0003
+      },
+      {
+        "step_id": 3,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " The song was sent out to radio stations in November 1999 as a promo for the soundtrack and the band.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0336,
+        "contradiction_prob": 0.9663
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5ab56e32554299637185c594",
+    "dataset": "hotpotqa",
+    "question": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "The Random House Tower, also known as the Park Imperial Apartments, is a 52-story mixed-use tower in New York City, United States, that is used as the headquarters of book publisher Random House and a luxury apartment complex.",
+        "entailment_prob": 0.9967,
+        "neutral_prob": 0.0032,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " It currently carries the Vornado Realty Trust corporate headquarters.",
+        "entailment_prob": 0.0477,
+        "neutral_prob": 0.9523,
+        "contradiction_prob": 0.0
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ab6d09255429954757d337d",
+    "dataset": "hotpotqa",
+    "question": "The football manager who recruited David Beckham managed Manchester United during what timeframe?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " Instead, he had drafted in young players like Nicky Butt, David Beckham, Paul Scholes and the Neville brothers, Gary and Phil.",
+        "entailment_prob": 0.0059,
+        "neutral_prob": 0.9912,
+        "contradiction_prob": 0.0029
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Sir Alexander Chapman Ferguson, CBE (born 31 December 1941) is a Scottish former football manager and player who managed Manchester United from 1986 to 2013.",
+        "entailment_prob": 0.0004,
+        "neutral_prob": 0.0005,
+        "contradiction_prob": 0.9991
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a75e05c55429976ec32bc5f",
+    "dataset": "hotpotqa",
+    "question": "Brown State Fishing Lake is in a country that has a population of how many inhabitants ?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Brown State Fishing Lake (sometimes also known as Brown State Fishing Lake And Wildlife Area) is a protected area in Brown County, Kansas in the United States.",
+        "entailment_prob": 0.9867,
+        "neutral_prob": 0.013,
+        "contradiction_prob": 0.0003
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " As of the 2010 census, the county population was 9,984.",
+        "entailment_prob": 0.002,
+        "neutral_prob": 0.9957,
+        "contradiction_prob": 0.0024
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ab3e45655429976abd1bcd4",
+    "dataset": "hotpotqa",
+    "question": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " The team competes in the America East Conference.",
+        "entailment_prob": 0.0004,
+        "neutral_prob": 0.0047,
+        "contradiction_prob": 0.9949
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " The conference was known as the Eastern College Athletic Conference-North from 1979 to 1988 and the North Atlantic Conference from 1988 to 1996.",
+        "entailment_prob": 0.0015,
+        "neutral_prob": 0.0063,
+        "contradiction_prob": 0.9922
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5ab29c24554299449642c932",
+    "dataset": "hotpotqa",
+    "question": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Giuseppe Fortunino Francesco Verdi (] ; 9 or 10 October 1813 \u2013 27 January 1901) was an Italian opera composer.",
+        "entailment_prob": 0.0644,
+        "neutral_prob": 0.9356,
+        "contradiction_prob": 0.0
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Charles Louis Ambroise Thomas (5 August 1811 \u2013 12 February 1896) was a French composer, best known for his operas \"Mignon\" (1866) and \"Hamlet\" (1868, after Shakespeare) and as Director of the Conservatoire de Paris from 1871 till his death.",
+        "entailment_prob": 0.9982,
+        "neutral_prob": 0.0017,
+        "contradiction_prob": 0.0001
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ae0d4c9554299603e418468",
+    "dataset": "hotpotqa",
+    "question": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " His other roles included Assistant Secretary for Health and Scientific Affairs in the Department of Health, Education, and Welfare (now the United States Department of Health and Human Services) during the Nixon administration and Dean of the University of Southern California's medical school.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0032,
+        "contradiction_prob": 0.9968
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Richard Milhous Nixon (January 9, 1913 \u2013 April 22, 1994) was the 37th President of the United States from 1969 until 1974, when he resigned from office, the only U.S. president to do so.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.0011,
+        "contradiction_prob": 0.9988
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a8133725542995ce29dcbdb",
+    "dataset": "hotpotqa",
+    "question": "Which writer was from England, Henry Roth or Robert Erskine Childers?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Henry Roth (February 8, 1906 \u2013 October 13, 1995) was an American novelist and short story writer.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0005,
+        "contradiction_prob": 0.9994
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ae7a8175542993210983ed8",
+    "dataset": "hotpotqa",
+    "question": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Sergio P\u00e9rez Mendoza (    ; born 26 January 1990) also known as \"Checo\" P\u00e9rez, is a Mexican racing driver, currently driving for Force India.",
+        "entailment_prob": 0.9966,
+        "neutral_prob": 0.0032,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " Sergio P\u00e9rez, the only other Mexican to finish on the podium, currently races with Sahara Force India F1 Team .",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.9023,
+        "contradiction_prob": 0.0976
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " Sergio P\u00e9rez, the only other Mexican to finish on the podium, currently races with Sahara Force India F1 Team .",
+        "entailment_prob": 0.0012,
+        "neutral_prob": 0.9184,
+        "contradiction_prob": 0.0804
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5ae6050f55429929b0807a5e",
+    "dataset": "hotpotqa",
+    "question": "This singer of A Rather Blustery Day also voiced what hedgehog?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " He is known for voicing the title character from \"Darkwing Duck\", Dr. Robotnik from \"Sonic the Hedgehog\", and Pete.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0023,
+        "contradiction_prob": 0.9976
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5adddccd5542997dc7907069",
+    "dataset": "hotpotqa",
+    "question": "Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Front Row is a discontinued media center software application for Apple's Macintosh computers and Apple TV for navigating and viewing video, photos, podcasts, and music from a computer, optical disc, or the Internet through a 10-foot user interface (similar to Windows Media Center and Kodi).",
+        "entailment_prob": 0.0066,
+        "neutral_prob": 0.9928,
+        "contradiction_prob": 0.0006
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The software relies on iTunes and iPhoto and is controlled by an Apple Remote or the keyboard function keys.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.9992,
+        "contradiction_prob": 0.0007
+      }
+    ],
+    "gold_sentences_found": 4
+  },
+  {
+    "sample_id": "5ae2070a5542994d89d5b313",
+    "dataset": "hotpotqa",
+    "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Damon Michael Gough (born 2 October 1969, in Dunstable, Bedfordshire), known by the stage name Badly Drawn Boy, is an English indie singer-songwriter and multi-instrumentalist.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0004,
+        "contradiction_prob": 0.9994
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " Its members since 2012 are Ellie Rowsell (vocals, guitar), Joff Oddie (guitars, vocals), Theo Ellis (bass), and Joel Amey (drums, vocals).",
+        "entailment_prob": 0.5012,
+        "neutral_prob": 0.4814,
+        "contradiction_prob": 0.0174
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Damon Michael Gough (born 2 October 1969, in Dunstable, Bedfordshire), known by the stage name Badly Drawn Boy, is an English indie singer-songwriter and multi-instrumentalist.",
+        "entailment_prob": 0.0007,
+        "neutral_prob": 0.9387,
+        "contradiction_prob": 0.0606
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ae22b8d554299234fd0440f",
+    "dataset": "hotpotqa",
+    "question": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " He is the son of former Manchester United and Danish international goalkeeper Peter Schmeichel.",
+        "entailment_prob": 0.9895,
+        "neutral_prob": 0.0104,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Peter Boles\u0142aw Schmeichel MBE (] ; born 18 November 1963) is a Danish former professional footballer who played as a goalkeeper, and was voted the IFFHS World's Best Goalkeeper in 1992 and 1993.",
+        "entailment_prob": 0.029,
+        "neutral_prob": 0.9666,
+        "contradiction_prob": 0.0044
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Peter Boles\u0142aw Schmeichel MBE (] ; born 18 November 1963) is a Danish former professional footballer who played as a goalkeeper, and was voted the IFFHS World's Best Goalkeeper in 1992 and 1993.",
+        "entailment_prob": 0.0017,
+        "neutral_prob": 0.9974,
+        "contradiction_prob": 0.0008
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a722b8655429971e9dc9329",
+    "dataset": "hotpotqa",
+    "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "\"These Boots Are Made for Walkin' is a hit song written by Lee Hazlewood and recorded by Nancy Sinatra.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.0,
+        "contradiction_prob": 0.9999
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "\"These Boots Are Made for Walkin' is a hit song written by Lee Hazlewood and recorded by Nancy Sinatra.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.008,
+        "contradiction_prob": 0.9919
+      },
+      {
+        "step_id": 3,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Barton Lee Hazlewood (July 9, 1929 \u2013 August 4, 2007) was an American country and pop singer, songwriter, and record producer, most widely known for his work with guitarist Duane Eddy during the late 1950s and singer Nancy Sinatra in the 1960s.",
+        "entailment_prob": 0.1346,
+        "neutral_prob": 0.8356,
+        "contradiction_prob": 0.0298
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5adf37a95542995ec70e8f97",
+    "dataset": "hotpotqa",
+    "question": "The 2011\u201312 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " Led by third-year head coach Shaka Smart, the Rams were coming off a season marked by a run to the Final Four.",
+        "entailment_prob": 0.7923,
+        "neutral_prob": 0.0145,
+        "contradiction_prob": 0.1932
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " Led by third-year head coach Shaka Smart, the Rams were coming off a season marked by a run to the Final Four.",
+        "entailment_prob": 0.9269,
+        "neutral_prob": 0.0722,
+        "contradiction_prob": 0.0009
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5abd259d55429924427fcf1a",
+    "dataset": "hotpotqa",
+    "question": "Are both Dictyosperma, and Huernia described as a genus?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Dictyosperma is a monotypic genus of flowering plant in the palm family found in the Mascarene Islands in the Indian Ocean (Mauritius, R\u00e9union and Rodrigues).",
+        "entailment_prob": 0.9984,
+        "neutral_prob": 0.0015,
+        "contradiction_prob": 0.0001
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a828c8355429966c78a6a50",
+    "dataset": "hotpotqa",
+    "question": "Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " It was founded by Henry J. Kaiser to provide steel plate for the Pacific Coast shipbuilding industry, which expanded during World War II, then shrank, then expanded again during the Korean War.",
+        "entailment_prob": 0.0062,
+        "neutral_prob": 0.9934,
+        "contradiction_prob": 0.0004
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Henry John Kaiser (May 9, 1882 \u2013 August 24, 1967) was an American industrialist who became known as the father of modern American shipbuilding.",
+        "entailment_prob": 0.9963,
+        "neutral_prob": 0.0034,
+        "contradiction_prob": 0.0003
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a8a3e745542996c9b8d5e70",
+    "dataset": "hotpotqa",
+    "question": "What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Tunnels & Trolls (abbreviated \"T&T\") is a fantasy role-playing game designed by Ken St. Andre and first published in 1975 by Flying Buffalo.",
+        "entailment_prob": 0.9983,
+        "neutral_prob": 0.0016,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Tunnels & Trolls (abbreviated \"T&T\") is a fantasy role-playing game designed by Ken St. Andre and first published in 1975 by Flying Buffalo.",
+        "entailment_prob": 0.0077,
+        "neutral_prob": 0.9921,
+        "contradiction_prob": 0.0002
+      },
+      {
+        "step_id": 3,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Tunnels & Trolls (abbreviated \"T&T\") is a fantasy role-playing game designed by Ken St. Andre and first published in 1975 by Flying Buffalo.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.0973,
+        "contradiction_prob": 0.9026
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ac23ff0554299636651994d",
+    "dataset": "hotpotqa",
+    "question": "When was Poison's album \"Shut Up, Make Love\" released?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "\"Shut Up, Make Love\" is a song by American rock band Poison; released in 2000, it was the first single presented to radio stations from their 2000 \"Crack a Smile...and More!",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0011,
+        "contradiction_prob": 0.9987
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ae4a3265542995ad6573de5",
+    "dataset": "hotpotqa",
+    "question": "Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Buck-Tick (stylized as BUCK-TICK) is a Japanese rock band, formed in Fujioka, Gunma in 1983.",
+        "entailment_prob": 0.9971,
+        "neutral_prob": 0.0028,
+        "contradiction_prob": 0.0001
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ae0361155429925eb1afc2c",
+    "dataset": "hotpotqa",
+    "question": "Which French ace pilot and adventurer fly L'Oiseau Blanc",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Charles Eug\u00e8ne Jules Marie Nungesser, MC (15 March 1892 \u2013 presumably on or after 8 May 1927) was a French ace pilot and adventurer, best remembered as a rival of Charles Lindbergh.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.002,
+        "contradiction_prob": 0.9978
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5abc0a5d5542993f40c73c64",
+    "dataset": "hotpotqa",
+    "question": "Are Freakonomics and In the Realm of the Hackers both American documentaries?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Freakonomics: The Movie is a 2010 American documentary film based on the 2005 book \"Freakonomics: A Rogue Economist Explores the Hidden Side of Everything\" by economist Steven D. Levitt and writer Stephen J. Dubner.",
+        "entailment_prob": 0.9966,
+        "neutral_prob": 0.0033,
+        "contradiction_prob": 0.0002
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "In The Realm of the Hackers is a 2003 Australian documentary directed by Kevin Anderson about the prominent hacker community, centered in Melbourne, Australia in the late 1980s until early 1990.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.0,
+        "contradiction_prob": 0.9999
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a7cc50e554299452d57ba3e",
+    "dataset": "hotpotqa",
+    "question": "Which band, Letters to Cleo or Screaming Trees, had more members?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The band's members are Kay Hanley, Greg McKenna, Michael Eisenstein, Stacy Jones, Scott Riebling, and later, Tom Polce.",
+        "entailment_prob": 0.0022,
+        "neutral_prob": 0.9594,
+        "contradiction_prob": 0.0385
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Screaming Trees was an American rock band formed in Ellensburg, Washington in 1985 by vocalist Mark Lanegan, guitarist Gary Lee Conner, bass player Van Conner and drummer Mark Pickerel.",
+        "entailment_prob": 0.9962,
+        "neutral_prob": 0.0034,
+        "contradiction_prob": 0.0004
+      }
+    ],
+    "gold_sentences_found": 4
+  },
+  {
+    "sample_id": "5abf63f15542997ec76fd3ea",
+    "dataset": "hotpotqa",
+    "question": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The anti-Bolshevik faction of this party, known as the Right SRs, which remained loyal to the Provisional Government leader Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of the Russian Civil War and subsequent persecution.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.9994,
+        "contradiction_prob": 0.0005
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The anti-Bolshevik faction of this party, known as the Right SRs, which remained loyal to the Provisional Government leader Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of the Russian Civil War and subsequent persecution.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.9923,
+        "contradiction_prob": 0.0076
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a8ef2a75542995a26add583",
+    "dataset": "hotpotqa",
+    "question": "Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Seven Brief Lessons on Physics (Italian: \"\" ) is a short book by the Italian physicist Carlo Rovelli.",
+        "entailment_prob": 0.9977,
+        "neutral_prob": 0.0022,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Carlo Rovelli (born 3 May 1956) is an Italian theoretical physicist and writer who has worked in Italy, the United States and since 2000, in France.",
+        "entailment_prob": 0.9981,
+        "neutral_prob": 0.0018,
+        "contradiction_prob": 0.0001
+      },
+      {
+        "step_id": 3,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Carlo Rovelli (born 3 May 1956) is an Italian theoretical physicist and writer who has worked in Italy, the United States and since 2000, in France.",
+        "entailment_prob": 0.98,
+        "neutral_prob": 0.0167,
+        "contradiction_prob": 0.0033
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a80721b554299485f5985ef",
+    "dataset": "hotpotqa",
+    "question": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "The Livesey Hall War Memorial commemorates the fallen of World War I and World War II who had been employed by the South Suburban Gas Company of London.",
+        "entailment_prob": 0.7195,
+        "neutral_prob": 0.0495,
+        "contradiction_prob": 0.2309
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " Over 60 million people were killed, which was about 3% of the 1940 world population (est. 2.3 billion).",
+        "entailment_prob": 0.9806,
+        "neutral_prob": 0.0189,
+        "contradiction_prob": 0.0005
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ab51dae5542991779162d82",
+    "dataset": "hotpotqa",
+    "question": "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Elko Regional Airport (IATA: EKO, ICAO: KEKO, FAA LID: EKO) , formerly Elko Municipal Airport, is a mile west of downtown Elko, in Elko County, Nevada.",
+        "entailment_prob": 0.9962,
+        "neutral_prob": 0.0036,
+        "contradiction_prob": 0.0002
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Gerald R. Ford International Airport (IATA: GRR, ICAO: KGRR, FAA LID: GRR) is a commercial airport in Cascade Township approximately 13 mi southeast of Grand Rapids, Michigan.",
+        "entailment_prob": 0.0026,
+        "neutral_prob": 0.0026,
+        "contradiction_prob": 0.9948
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a7571135542992d0ec05f98",
+    "dataset": "hotpotqa",
+    "question": "Ralph Hefferline was a psychology professor at a university that is located in what city?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Columbia University (Columbia; officially Columbia University in the City of New York), established in 1754, is a private Ivy League research university in Upper Manhattan, New York City, often cited as one of the world's most prestigious universities.",
+        "entailment_prob": 0.0016,
+        "neutral_prob": 0.0139,
+        "contradiction_prob": 0.9845
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Ralph Franklin Hefferline (15 February 1910 in Muncie, Indiana \u2013 16 March 1974) was a psychology professor at Columbia University.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.0003,
+        "contradiction_prob": 0.9997
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a7a0e1e5542990783324e1a",
+    "dataset": "hotpotqa",
+    "question": "Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "The Scotch Collie is a landrace breed of dog which originated from the highland regions of Scotland.",
+        "entailment_prob": 0.6733,
+        "neutral_prob": 0.1937,
+        "contradiction_prob": 0.133
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a74106b55429979e288289e",
+    "dataset": "hotpotqa",
+    "question": "Where is the company that Sachin Warrier worked for as a software engineer headquartered? ",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " He was working as a software engineer in Tata Consultancy Services in Kochi.",
+        "entailment_prob": 0.0007,
+        "neutral_prob": 0.0063,
+        "contradiction_prob": 0.993
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a79311755429970f5fffe67",
+    "dataset": "hotpotqa",
+    "question": "A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " The story's main character is 16-year-old high school student Ichitaka Seto who is in love with his classmate Iori Yoshizuki, but too shy to tell her.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.993,
+        "contradiction_prob": 0.0069
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " The story's main character is 16-year-old high school student Ichitaka Seto who is in love with his classmate Iori Yoshizuki, but too shy to tell her.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.0003,
+        "contradiction_prob": 0.9996
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5ab2d3df554299194fa9352c",
+    "dataset": "hotpotqa",
+    "question": "The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " After a long and successfull colonial service, he died in combat at Adwa, and was posthumously awarded the Gold Medal of Military Valor.",
+        "entailment_prob": 0.0011,
+        "neutral_prob": 0.9982,
+        "contradiction_prob": 0.0007
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": " This climactic battle of the First Italo-Ethiopian War, was a decisive defeat for Italy and secured Ethiopian sovereignty.",
+        "entailment_prob": 0.9892,
+        "neutral_prob": 0.0108,
+        "contradiction_prob": 0.0001
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a760ab65542994ccc918697",
+    "dataset": "hotpotqa",
+    "question": "Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "Alfred Balk (July 24, 1930 \u2013 November 25, 2010) was an American reporter, nonfiction author and magazine editor who wrote groundbreaking articles about housing segregation, the Nation of Islam, the environment and Illinois politics.",
+        "entailment_prob": 0.0002,
+        "neutral_prob": 0.989,
+        "contradiction_prob": 0.0108
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5a7d54165542995f4f402256",
+    "dataset": "hotpotqa",
+    "question": "A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " It is bordered to the north by the Firth of Forth, to the south by the village of Dirleton and Dirleton Castle, to the east by the North Berwick West Links golf course, and to the west by the Archerfield Estate and Links golf courses.",
+        "entailment_prob": 0.0001,
+        "neutral_prob": 0.9892,
+        "contradiction_prob": 0.0107
+      },
+      {
+        "step_id": 2,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Yellowcraig, less commonly known as Broad Sands Bay, is a coastal area of forest, beach and grassland in East Lothian, south-east Scotland.",
+        "entailment_prob": 0.0003,
+        "neutral_prob": 0.0039,
+        "contradiction_prob": 0.9959
+      }
+    ],
+    "gold_sentences_found": 4
+  },
+  {
+    "sample_id": "5ab859a955429934fafe6d7b",
+    "dataset": "hotpotqa",
+    "question": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Back to Mono (1958\u20131969) is a box set (4 compact discs or 5 vinyl LPs) compilation of the recorded work of record producer Phil Spector, through the 1960s, released in 1991 by ABKCO as #7118-2.",
+        "entailment_prob": 0.0,
+        "neutral_prob": 0.273,
+        "contradiction_prob": 0.727
+      },
+      {
+        "step_id": 2,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "\"To Know Him Is to Love Him\" is a song written by Phil Spector, inspired by words on his father's tombstone, \"To Know Him Was To Love Him.\"",
+        "entailment_prob": 0.0006,
+        "neutral_prob": 0.9471,
+        "contradiction_prob": 0.0523
+      },
+      {
+        "step_id": 3,
+        "label": "incorrect",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "\"To Know Him Is to Love Him\" is a song written by Phil Spector, inspired by words on his father's tombstone, \"To Know Him Was To Love Him.\"",
+        "entailment_prob": 0.0003,
+        "neutral_prob": 0.1988,
+        "contradiction_prob": 0.801
+      }
+    ],
+    "gold_sentences_found": 3
+  },
+  {
+    "sample_id": "5add61d65542995b365fab21",
+    "dataset": "hotpotqa",
+    "question": "What type of forum did a former Soviet statesman initiate?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": "The World Summit of Nobel Peace Laureates was initiated by Mikhail Gorbachev in the 90s, as a forum in which the Nobel Peace Laureates and the Peace Laureate Organizations could come together to address global issues with a view to encourage and support peace and human well being in the world.",
+        "entailment_prob": 0.0012,
+        "neutral_prob": 0.9987,
+        "contradiction_prob": 0.0
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5a8e068b5542995085b37384",
+    "dataset": "hotpotqa",
+    "question": "Are Ferocactus and Silene both types of plant?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Ferocactus is a genus of large barrel-shaped cacti, mostly with large spines and small flowers.",
+        "entailment_prob": 0.9976,
+        "neutral_prob": 0.0021,
+        "contradiction_prob": 0.0002
+      },
+      {
+        "step_id": 2,
+        "label": "correct",
+        "method": "nli_entailment",
+        "ambiguous": false,
+        "best_evidence": "Silene is a genus of flowering plants in the family Caryophyllaceae.",
+        "entailment_prob": 0.9958,
+        "neutral_prob": 0.0039,
+        "contradiction_prob": 0.0003
+      }
+    ],
+    "gold_sentences_found": 2
+  },
+  {
+    "sample_id": "5abbf698554299114383a0b5",
+    "dataset": "hotpotqa",
+    "question": "Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?",
+    "per_step": [
+      {
+        "step_id": 1,
+        "label": "ambiguous",
+        "method": "nli_entailment",
+        "ambiguous": true,
+        "best_evidence": " It saw action as a bomber unit in the South West Pacific theatre of World War II and, equipped with English Electric Canberra jets, in the Malayan Emergency and the Vietnam War.",
+        "entailment_prob": 0.0004,
+        "neutral_prob": 0.994,
+        "contradiction_prob": 0.0056
+      }
+    ],
+    "gold_sentences_found": 2
+  }
+]
