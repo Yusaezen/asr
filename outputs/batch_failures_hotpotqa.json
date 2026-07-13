@@ -1,0 +1,9 @@
+[
+  {
+    "sample_id": "5a7a0e1e5542990783324e1a",
+    "question": "Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The Manchester Terrier is a breed of dog that descended from the Toy Poodle.\",\n\"confidence\": 0."
+  }
+]

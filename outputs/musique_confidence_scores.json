@@ -1,0 +1,996 @@
+[
+  {
+    "sample_id": "2hop__460946_294723",
+    "dataset": "musique",
+    "question": "Who is the spouse of the Green performer?",
+    "complexity": "medium",
+    "final_answer": "Miquette Giraudy",
+    "ground_truth": "Miquette Giraudy",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Green is Steve Hillage.",
+        "confidence_logprob": 0.0295,
+        "confidence_sampling": 0.9015
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__252311_366220",
+    "dataset": "musique",
+    "question": "Who founded the company that distributed the film UHF?",
+    "complexity": "medium",
+    "final_answer": "Orion Pictures",
+    "ground_truth": "Mike Medavoy",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The film UHF was distributed by Orion Pictures.",
+        "confidence_logprob": 0.1529,
+        "confidence_sampling": 0.8579
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__701895_752697",
+    "dataset": "musique",
+    "question": "What administrative territorial entity is the owner of Ciudad Deportiva located?",
+    "complexity": "medium",
+    "final_answer": "Mexico City",
+    "ground_truth": "Tamaulipas",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Ciudad Deportiva is located in Mexico City.",
+        "confidence_logprob": 0.055,
+        "confidence_sampling": 0.8644
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__259228_793698",
+    "dataset": "musique",
+    "question": "Where is Ulrich Walter's employer headquartered?",
+    "complexity": "medium",
+    "final_answer": "Cologne",
+    "ground_truth": "Cologne",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Ulrich Walter's employer is the German Aerospace Center.",
+        "confidence_logprob": 0.0748,
+        "confidence_sampling": 0.8648
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__481349_302087",
+    "dataset": "musique",
+    "question": "Which company owns the manufacturer of Learjet 60?",
+    "complexity": "medium",
+    "final_answer": "<one atomic inference>",
+    "ground_truth": "Bombardier Inc.",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The manufacturer of Learjet 60 is Bombardier Aerospace.",
+        "confidence_logprob": 0.22,
+        "confidence_sampling": 0.8997
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__697790_864352",
+    "dataset": "musique",
+    "question": "Who is the child of Caroline LeRoy's spouse?",
+    "complexity": "medium",
+    "final_answer": "Fletcher Webster",
+    "ground_truth": "Fletcher Webster",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Caroline LeRoy's spouse is Daniel Webster.",
+        "confidence_logprob": 0.0532,
+        "confidence_sampling": 0.8694
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__207476_625987",
+    "dataset": "musique",
+    "question": "Who is the grandmother of Philippe, Duke of Orl\u00e9ans?",
+    "complexity": "medium",
+    "final_answer": "Princess Marie-Th\u00e9r\u00e8se de Bourbon",
+    "ground_truth": "Marie de' Medici",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Philippe, Duke of Orl\u00e9ans' mother is Princess Isabelle d'Orl\u00e9ans.",
+        "confidence_logprob": 0.1274,
+        "confidence_sampling": 0.8764
+      },
+      {
+        "step_id": 2,
+        "content": "Princess Isabelle d'Orl\u00e9ans' mother is Princess Marie-Th\u00e9r\u00e8se de Bourbon.",
+        "confidence_logprob": 0.2157,
+        "confidence_sampling": 0.8859
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__390947_232243",
+    "dataset": "musique",
+    "question": "What is the goal of the group that European Movement Germany is a member of?",
+    "complexity": "complex",
+    "final_answer": "The goal of the group that European Movement Germany is a member of is to create a single market and monetary union among its member states.",
+    "ground_truth": "European integration",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "European Movement Germany is a member of the European Union.",
+        "confidence_logprob": 0.0347,
+        "confidence_sampling": 0.9326
+      },
+      {
+        "step_id": 2,
+        "content": "The goal of the European Union is to create a single market and monetary union among its member states.",
+        "confidence_logprob": 0.3128,
+        "confidence_sampling": 0.8978
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__354635_174222",
+    "dataset": "musique",
+    "question": "What company succeeded the owner of Empire Sports Network?",
+    "complexity": "medium",
+    "final_answer": "ESPN",
+    "ground_truth": "Time Warner Cable",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Empire Sports Network was sold to ESPN.",
+        "confidence_logprob": 0.0568,
+        "confidence_sampling": 0.9023
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__635187_861533",
+    "dataset": "musique",
+    "question": "What province shares a border with the province where Lago District is located?",
+    "complexity": "complex",
+    "final_answer": "British Columbia",
+    "ground_truth": "Cabo Delgado Province",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The province of Lago District is in Canada.",
+        "confidence_logprob": 0.0223,
+        "confidence_sampling": 0.8815
+      },
+      {
+        "step_id": 2,
+        "content": "Canada has ten provinces and three territories.",
+        "confidence_logprob": 0.2743,
+        "confidence_sampling": 0.958
+      },
+      {
+        "step_id": 3,
+        "content": "The province of Lago District shares a border with the province of British Columbia.",
+        "confidence_logprob": 0.1538,
+        "confidence_sampling": 0.9409
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__166824_185403",
+    "dataset": "musique",
+    "question": "What league does the team that plays in Stadio Ciro Vigorito play for?",
+    "complexity": "medium",
+    "final_answer": "AC Milan",
+    "ground_truth": "Lega Pro Prima Divisione",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The team that plays in Stadio Ciro Vigorito is the AC Milan football club.",
+        "confidence_logprob": 0.0477,
+        "confidence_sampling": 0.8988
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__698577_851686",
+    "dataset": "musique",
+    "question": "What is a notable work written by the author of The Timothy files?",
+    "complexity": "medium",
+    "final_answer": "It.",
+    "ground_truth": "Anderson Tapes",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of The Timothy files is Stephen King.",
+        "confidence_logprob": 0.0774,
+        "confidence_sampling": 0.9018
+      },
+      {
+        "step_id": 2,
+        "content": "A notable work written by Stephen King is It.",
+        "confidence_logprob": 0.1591,
+        "confidence_sampling": 0.9143
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__362107_652514",
+    "dataset": "musique",
+    "question": "In which borough was Callum McManaman born?",
+    "complexity": "medium",
+    "final_answer": "Liverpool",
+    "ground_truth": "Knowsley",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Callum McManaman was born in Liverpool.",
+        "confidence_logprob": 0.0836,
+        "confidence_sampling": 0.8669
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__402530_774333",
+    "dataset": "musique",
+    "question": "What other county does the county where Imperial is located share a border with?",
+    "complexity": "complex",
+    "final_answer": "Nevada",
+    "ground_truth": "Crockett County",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Imperial is in the state of California.",
+        "confidence_logprob": 0.0459,
+        "confidence_sampling": 0.9176
+      },
+      {
+        "step_id": 2,
+        "content": "California shares a border with Nevada.",
+        "confidence_logprob": 0.0818,
+        "confidence_sampling": 0.8924
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__195917_575657",
+    "dataset": "musique",
+    "question": "In what county is William W. Blair's birthplace located?",
+    "complexity": "medium",
+    "final_answer": "New York",
+    "ground_truth": "Orleans County",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "William W. Blair was born in New York City.",
+        "confidence_logprob": 0.1244,
+        "confidence_sampling": 0.8746
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__683835_709167",
+    "dataset": "musique",
+    "question": "What award did the author of The Red Tree receive?",
+    "complexity": "medium",
+    "final_answer": "Academy Award for Best Director for Blue Velvet in 1986",
+    "ground_truth": "Academy Award for Best Animated Short Film",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of The Red Tree is David Lynch.",
+        "confidence_logprob": 0.046,
+        "confidence_sampling": 0.912
+      },
+      {
+        "step_id": 2,
+        "content": "David Lynch received the Academy Award for Best Director for Blue Velvet in 1986.",
+        "confidence_logprob": 0.1843,
+        "confidence_sampling": 0.8679
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__197470_271394",
+    "dataset": "musique",
+    "question": "Where was Tyler MacDuff's child educated?",
+    "complexity": "medium",
+    "final_answer": "Rob Reiner",
+    "ground_truth": "Blair High School",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Tyler MacDuff is a character in the film The Patriot.",
+        "confidence_logprob": 0.0522,
+        "confidence_sampling": 0.8627
+      },
+      {
+        "step_id": 2,
+        "content": "The Patriot was directed by Rob Reiner.",
+        "confidence_logprob": 0.0485,
+        "confidence_sampling": 0.8907
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__458131_174974",
+    "dataset": "musique",
+    "question": "Who is the spouse of the Rabbit Hole's producer?",
+    "complexity": "medium",
+    "final_answer": "<one atomic inference>",
+    "ground_truth": "Keith Urban",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The producer of Rabbit Hole is Tim Burton.",
+        "confidence_logprob": 0.0578,
+        "confidence_sampling": 0.8567
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__299142_347613",
+    "dataset": "musique",
+    "question": "Who is the child of Sigrid Eskilsdotter's child?",
+    "complexity": "medium",
+    "final_answer": "<one atomic inference>",
+    "ground_truth": "Svante Stensson Sture",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Sigrid Eskilsdotter's child is a musician named Ola Gjeilo.",
+        "confidence_logprob": 0.0551,
+        "confidence_sampling": 0.9096
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__528263_865831",
+    "dataset": "musique",
+    "question": "In which county is Kimbrough Memorial Stadium located?",
+    "complexity": "medium",
+    "final_answer": "Fort Hood, Texas",
+    "ground_truth": "Randall County",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Kimbrough Memorial Stadium is located in Fort Hood, Texas.",
+        "confidence_logprob": 0.1095,
+        "confidence_sampling": 0.8935
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__569582_304416",
+    "dataset": "musique",
+    "question": "What record label is the performer of Almost Made Ya signed to?",
+    "complexity": "medium",
+    "final_answer": "Gwar",
+    "ground_truth": "Derrty Entertainment",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Almost Made Ya is Gwar.",
+        "confidence_logprob": 0.0671,
+        "confidence_sampling": 0.8667
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__505860_650613",
+    "dataset": "musique",
+    "question": "Where was the author of Hannibal and Scipio educated at?",
+    "complexity": "medium",
+    "final_answer": "University of Edinburgh",
+    "ground_truth": "Exeter College",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of Hannibal and Scipio is James Clerk Maxwell.",
+        "confidence_logprob": 0.1018,
+        "confidence_sampling": 0.9197
+      },
+      {
+        "step_id": 2,
+        "content": "James Clerk Maxwell was educated at the University of Edinburgh.",
+        "confidence_logprob": 0.3256,
+        "confidence_sampling": 0.8587
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__821197_368148",
+    "dataset": "musique",
+    "question": "In which county is Southern Maryland Electric Cooperative headquartered?",
+    "complexity": "medium",
+    "final_answer": "Charles County",
+    "ground_truth": "Charles County",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Southern Maryland Electric Cooperative's headquarters are located in Charles County.",
+        "confidence_logprob": 0.0588,
+        "confidence_sampling": 0.8624
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__554167_451128",
+    "dataset": "musique",
+    "question": "Who is the child of the Victim of Romance performer?",
+    "complexity": "medium",
+    "final_answer": "Sean Ono Lennon",
+    "ground_truth": "Chynna Phillips",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Victim of Romance is John Lennon.",
+        "confidence_logprob": 0.111,
+        "confidence_sampling": 0.8513
+      },
+      {
+        "step_id": 2,
+        "content": "John Lennon's child is Sean Ono Lennon.",
+        "confidence_logprob": 0.268,
+        "confidence_sampling": 0.8448
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__702496_430061",
+    "dataset": "musique",
+    "question": "What county was Tim Dubois born in?",
+    "complexity": "medium",
+    "final_answer": "United States",
+    "ground_truth": "McDonald County",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Tim Dubois is a musician from the United States.",
+        "confidence_logprob": 0.0785,
+        "confidence_sampling": 0.8576
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__549146_223121",
+    "dataset": "musique",
+    "question": "What record label did the person who is part of The Bruce Lee Band start?",
+    "complexity": "complex",
+    "final_answer": "Sonic Mayhem",
+    "ground_truth": "Asian Man Records",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The person who is part of The Bruce Lee Band is David Tyson Gentry.",
+        "confidence_logprob": 0.1324,
+        "confidence_sampling": 0.865
+      },
+      {
+        "step_id": 2,
+        "content": "David Tyson Gentry started the record label 'Sonic Mayhem'.",
+        "confidence_logprob": 0.1668,
+        "confidence_sampling": 0.8873
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__647996_551681",
+    "dataset": "musique",
+    "question": "What is another notable work made by the author of Miss Sara Sampson?",
+    "complexity": "medium",
+    "final_answer": "A Tale of Two Cities",
+    "ground_truth": "Emilia Galotti",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of Miss Sara Sampson is Charles Dickens.",
+        "confidence_logprob": 0.118,
+        "confidence_sampling": 0.8982
+      },
+      {
+        "step_id": 2,
+        "content": "Another notable work made by Charles Dickens is A Tale of Two Cities.",
+        "confidence_logprob": 0.2585,
+        "confidence_sampling": 0.8456
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__673655_316668",
+    "dataset": "musique",
+    "question": "What instrument is played by the person from The Blackout All-Stars?",
+    "complexity": "medium",
+    "final_answer": "band",
+    "ground_truth": "conga",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Blackout All-Stars is a band.",
+        "confidence_logprob": 0.1604,
+        "confidence_sampling": 0.8846
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__574419_270105",
+    "dataset": "musique",
+    "question": "What is the seat of the county where Van Hook Township is located?",
+    "complexity": "complex",
+    "final_answer": "Harrisburg",
+    "ground_truth": "Stanley",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Van Hook Township is located in Pennsylvania.",
+        "confidence_logprob": 0.0371,
+        "confidence_sampling": 0.8945
+      },
+      {
+        "step_id": 2,
+        "content": "Pennsylvania's county seat is Harrisburg.",
+        "confidence_logprob": 0.0833,
+        "confidence_sampling": 0.9137
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__403712_793210",
+    "dataset": "musique",
+    "question": "Who is the father of Edward Baring, 1st Baron Revelstoke's father?",
+    "complexity": "medium",
+    "final_answer": "John Baring",
+    "ground_truth": "Sir Francis Baring, 1st Baronet",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Edward Baring, 1st Baron Revelstoke was the son of Sir Edward Baring.",
+        "confidence_logprob": 0.1373,
+        "confidence_sampling": 0.9008
+      },
+      {
+        "step_id": 2,
+        "content": "Sir Edward Baring was the son of John Baring.",
+        "confidence_logprob": 0.2834,
+        "confidence_sampling": 0.8851
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__832795_350510",
+    "dataset": "musique",
+    "question": "What group was the performer of Be the One a member of?",
+    "complexity": "medium",
+    "final_answer": "<unknown>",
+    "ground_truth": "Jackson 5",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Be the One is David Bowie.",
+        "confidence_logprob": 0.1027,
+        "confidence_sampling": 0.8849
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__744055_408817",
+    "dataset": "musique",
+    "question": "Who is the lead singer of the band performing Bang Bang Rock & Roll?",
+    "complexity": "medium",
+    "final_answer": "<one atomic inference>",
+    "ground_truth": "Eddie Argos",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The band performing Bang Bang Rock & Roll is The Monkees.",
+        "confidence_logprob": 0.0839,
+        "confidence_sampling": 0.9261
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__726717_610238",
+    "dataset": "musique",
+    "question": "What is the network which National Cycle Route 57 is part of an example of?",
+    "complexity": "complex",
+    "final_answer": "National Cycle Network",
+    "ground_truth": "national cycling route network",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "National Cycle Route 57 is part of the National Cycle Network.",
+        "confidence_logprob": 0.2023,
+        "confidence_sampling": 0.9225
+      },
+      {
+        "step_id": 2,
+        "content": "The National Cycle Network is a network of cycling routes in the United Kingdom.",
+        "confidence_logprob": 0.3491,
+        "confidence_sampling": 0.892
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__499577_617190",
+    "dataset": "musique",
+    "question": "Who is the spouse of the child of Peter Andreas Heiberg?",
+    "complexity": "medium",
+    "final_answer": "Anne-Lise Heiberg",
+    "ground_truth": "Johanne Luise Heiberg",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Peter Andreas Heiberg's child is Peter Heiberg.",
+        "confidence_logprob": 0.0538,
+        "confidence_sampling": 0.8634
+      },
+      {
+        "step_id": 2,
+        "content": "Peter Heiberg's spouse is Anne-Lise Heiberg.",
+        "confidence_logprob": 0.1999,
+        "confidence_sampling": 0.9094
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__685280_510757",
+    "dataset": "musique",
+    "question": "The Unwinding author volunteered for which organisation?",
+    "complexity": "medium",
+    "final_answer": "<one atomic inference>",
+    "ground_truth": "Peace Corps",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Unwinding author is Tom Rachman.",
+        "confidence_logprob": 0.0516,
+        "confidence_sampling": 0.8655
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__341305_332933",
+    "dataset": "musique",
+    "question": "What is the capital of the county that Pine Springs is located in?",
+    "complexity": "medium",
+    "final_answer": "Phoenix",
+    "ground_truth": "Van Horn",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Pine Springs is located in Apache County.",
+        "confidence_logprob": 0.0577,
+        "confidence_sampling": 0.8856
+      },
+      {
+        "step_id": 2,
+        "content": "The capital of Apache County is Phoenix.",
+        "confidence_logprob": 0.1489,
+        "confidence_sampling": 0.9089
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__731228_609866",
+    "dataset": "musique",
+    "question": "What district is the headquarter of Julia's House located?",
+    "complexity": "medium",
+    "final_answer": "New York City",
+    "ground_truth": "East Dorset",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Julia's House is located in New York City.",
+        "confidence_logprob": 0.0396,
+        "confidence_sampling": 0.898
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__693444_220151",
+    "dataset": "musique",
+    "question": "Who is the spouse of Young Man Luther's author?",
+    "complexity": "medium",
+    "final_answer": "Katherina von Bora",
+    "ground_truth": "Joan Erikson",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Young Man Luther was written by Martin Luther.",
+        "confidence_logprob": 0.026,
+        "confidence_sampling": 0.8752
+      },
+      {
+        "step_id": 2,
+        "content": "Martin Luther's spouse is Katherina von Bora.",
+        "confidence_logprob": 0.1804,
+        "confidence_sampling": 0.9884
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__235471_565925",
+    "dataset": "musique",
+    "question": "What record label did the performer of The Place and the Time belong to?",
+    "complexity": "medium",
+    "final_answer": "Real World Records",
+    "ground_truth": "Columbia Records",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of The Place and the Time is Peter Gabriel.",
+        "confidence_logprob": 0.1445,
+        "confidence_sampling": 0.8875
+      },
+      {
+        "step_id": 2,
+        "content": "Peter Gabriel's record label is Real World Records.",
+        "confidence_logprob": 0.156,
+        "confidence_sampling": 0.8927
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__310456_846599",
+    "dataset": "musique",
+    "question": "Who is the child of the person who followed Tihomir of Serbia?",
+    "complexity": "medium",
+    "final_answer": "Milo\u0161 Obrenovi\u0107",
+    "ground_truth": "Saint Sava",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Tihomir of Serbia was succeeded by Peter II of Serbia.",
+        "confidence_logprob": 0.1002,
+        "confidence_sampling": 0.9021
+      },
+      {
+        "step_id": 2,
+        "content": "Peter II of Serbia's child is Milo\u0161 Obrenovi\u0107.",
+        "confidence_logprob": 0.1287,
+        "confidence_sampling": 0.9241
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__335418_279684",
+    "dataset": "musique",
+    "question": "What team was Anna Benson's husband on?",
+    "complexity": "medium",
+    "final_answer": "The Benson Brothers",
+    "ground_truth": "Pittsburgh Pirates",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Anna Benson's husband is David Benson.",
+        "confidence_logprob": 0.0895,
+        "confidence_sampling": 0.8566
+      },
+      {
+        "step_id": 2,
+        "content": "David Benson was a member of the band 'The Benson Brothers'.",
+        "confidence_logprob": 0.07,
+        "confidence_sampling": 0.9267
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__191125_781346",
+    "dataset": "musique",
+    "question": "What place does the administrative territorial entity that Juba is located in share a border with?",
+    "complexity": "complex",
+    "final_answer": "Ethiopia",
+    "ground_truth": "Eastern Equatoria",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Juba is located in South Sudan.",
+        "confidence_logprob": 0.1058,
+        "confidence_sampling": 0.9177
+      },
+      {
+        "step_id": 2,
+        "content": "South Sudan shares a border with Ethiopia.",
+        "confidence_logprob": 0.1266,
+        "confidence_sampling": 0.9488
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__475070_532404",
+    "dataset": "musique",
+    "question": "Where was the spouse of Frances Tupper born?",
+    "complexity": "medium",
+    "final_answer": "New Brunswick, Canada",
+    "ground_truth": "Amherst",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Frances Tupper's spouse is Richard Tupper.",
+        "confidence_logprob": 0.0677,
+        "confidence_sampling": 0.8841
+      },
+      {
+        "step_id": 2,
+        "content": "Richard Tupper was born in New Brunswick, Canada.",
+        "confidence_logprob": 0.2244,
+        "confidence_sampling": 0.9476
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__700093_455653",
+    "dataset": "musique",
+    "question": "Who founded the political party of Dimuthu Bandara Abayakoon?",
+    "complexity": "medium",
+    "final_answer": "<unknown>",
+    "ground_truth": "Rohana Wijeweera",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Dimuthu Bandara Abayakoon is a politician from Sri Lanka.",
+        "confidence_logprob": 0.1138,
+        "confidence_sampling": 0.8571
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__512773_346751",
+    "dataset": "musique",
+    "question": "Bancroft's county borders what county?",
+    "complexity": "medium",
+    "final_answer": "Hennepin or Ramsey",
+    "ground_truth": "Haliburton County",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Bancroft is in the state of Minnesota.",
+        "confidence_logprob": 0.1047,
+        "confidence_sampling": 0.8669
+      },
+      {
+        "step_id": 2,
+        "content": "Minnesota has two counties: Hennepin and Ramsey.",
+        "confidence_logprob": 0.0623,
+        "confidence_sampling": 0.8469
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__411091_625230",
+    "dataset": "musique",
+    "question": "In which county is Mark Dismore's birthplace located?",
+    "complexity": "medium",
+    "final_answer": "London",
+    "ground_truth": "Hancock County",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Mark Dismore was born in London.",
+        "confidence_logprob": 0.0553,
+        "confidence_sampling": 0.9331
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__423972_540249",
+    "dataset": "musique",
+    "question": "Who was the sibling of Nannina de' Medici?",
+    "complexity": "medium",
+    "final_answer": "Lorenzo de' Medici",
+    "ground_truth": "Giuliano de' Medici",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Nannina de' Medici was a sister of Lorenzo de' Medici.",
+        "confidence_logprob": 0.1156,
+        "confidence_sampling": 0.8666
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__455158_247871",
+    "dataset": "musique",
+    "question": "What county is the NRHEG High School located in?",
+    "complexity": "medium",
+    "final_answer": "Northamptonshire",
+    "ground_truth": "Waseca County",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The NRHEG High School is located in Northamptonshire.",
+        "confidence_logprob": 0.0308,
+        "confidence_sampling": 0.8923
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__189094_612080",
+    "dataset": "musique",
+    "question": "What league does the team that occupies the Rabat Ajax Football Ground belong to?",
+    "complexity": "medium",
+    "final_answer": "<unknown>",
+    "ground_truth": "Maltese Premier League",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Rabat Ajax Football Ground is located in Rabat, Morocco.",
+        "confidence_logprob": 0.1472,
+        "confidence_sampling": 0.9291
+      }
+    ]
+  },
+  {
+    "sample_id": "2hop__765678_310556",
+    "dataset": "musique",
+    "question": "Who was married to the star of No Escape?",
+    "complexity": "medium",
+    "final_answer": "<one atomic inference>",
+    "ground_truth": "John Profumo",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The star of No Escape is Nicolas Cage.",
+        "confidence_logprob": 0.1076,
+        "confidence_sampling": 0.8976
+      }
+    ]
+  }
+]

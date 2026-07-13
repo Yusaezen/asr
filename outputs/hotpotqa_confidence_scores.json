@@ -1,0 +1,1146 @@
+[
+  {
+    "sample_id": "5a8b57f25542995d1e6f1371",
+    "dataset": "hotpotqa",
+    "question": "Were Scott Derrickson and Ed Wood of the same nationality?",
+    "complexity": "medium",
+    "final_answer": "yes",
+    "ground_truth": "yes",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Scott Derrickson is an American director.",
+        "confidence_logprob": 0.0667,
+        "confidence_sampling": 0.8899
+      },
+      {
+        "step_id": 2,
+        "content": "Ed Wood was an American director.",
+        "confidence_logprob": 0.2225,
+        "confidence_sampling": 0.9397
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8c7595554299585d9e36b6",
+    "dataset": "hotpotqa",
+    "question": "What government position was held by the woman who portrayed Corliss Archer in the film Kiss and Tell?",
+    "complexity": "medium",
+    "final_answer": "Chief of Protocol",
+    "ground_truth": "Chief of Protocol",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The woman who portrayed Corliss Archer in the film Kiss and Tell was Shirley Temple.",
+        "confidence_logprob": 0.2071,
+        "confidence_sampling": 0.8913
+      },
+      {
+        "step_id": 2,
+        "content": "Shirley Temple held the government position of Chief of Protocol of the United States.",
+        "confidence_logprob": 0.117,
+        "confidence_sampling": 0.8815
+      }
+    ]
+  },
+  {
+    "sample_id": "5a85ea095542994775f606a8",
+    "dataset": "hotpotqa",
+    "question": "What science fantasy young adult series, told in first person, has a set of companion books narrating the stories of enslaved worlds and alien species?",
+    "complexity": "complex",
+    "final_answer": "<final answer>",
+    "ground_truth": "Animorphs",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "<one atomic inference>",
+        "confidence_logprob": 0.0017,
+        "confidence_sampling": 0.8529
+      },
+      {
+        "step_id": 2,
+        "content": "<one atomic inference>",
+        "confidence_logprob": 0.1302,
+        "confidence_sampling": 0.8967
+      },
+      {
+        "step_id": 3,
+        "content": "<final atomic inference>",
+        "confidence_logprob": 0.0152,
+        "confidence_sampling": 0.8565
+      }
+    ]
+  },
+  {
+    "sample_id": "5adbf0a255429947ff17385a",
+    "dataset": "hotpotqa",
+    "question": "Are the Laleli Mosque and Esma Sultan Mansion located in the same neighborhood?",
+    "complexity": "medium",
+    "final_answer": "no",
+    "ground_truth": "no",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Laleli Mosque is located in the Laleli neighborhood of Fatih, Istanbul.",
+        "confidence_logprob": 0.1817,
+        "confidence_sampling": 0.8914
+      },
+      {
+        "step_id": 2,
+        "content": "The Esma Sultan Mansion is located in the Ortakoy neighborhood of Istanbul.",
+        "confidence_logprob": 0.2278,
+        "confidence_sampling": 0.9103
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8e3ea95542995a26add48d",
+    "dataset": "hotpotqa",
+    "question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
+    "complexity": "complex",
+    "final_answer": "Greenwich Village, New York City",
+    "ground_truth": "Greenwich Village, New York City",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Adriana Trigiani directed the romantic comedy Big Stone Gap.",
+        "confidence_logprob": 0.0269,
+        "confidence_sampling": 0.9166
+      },
+      {
+        "step_id": 2,
+        "content": "Adriana Trigiani is based in Greenwich Village, New York City.",
+        "confidence_logprob": 0.2464,
+        "confidence_sampling": 0.906
+      }
+    ]
+  },
+  {
+    "sample_id": "5abd94525542992ac4f382d2",
+    "dataset": "hotpotqa",
+    "question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
+    "complexity": "complex",
+    "final_answer": "YG Entertainment",
+    "ground_truth": "YG Entertainment",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The debut album of a South Korean boy group in 2014 is S/S.",
+        "confidence_logprob": 0.0989,
+        "confidence_sampling": 0.911
+      },
+      {
+        "step_id": 2,
+        "content": "S/S was formed by YG Entertainment.",
+        "confidence_logprob": 0.219,
+        "confidence_sampling": 0.8913
+      }
+    ]
+  },
+  {
+    "sample_id": "5a85b2d95542997b5ce40028",
+    "dataset": "hotpotqa",
+    "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
+    "complexity": "complex",
+    "final_answer": "Will Smith",
+    "ground_truth": "Eenasul Fateh",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Aladin is a character from the Disney film Aladdin.",
+        "confidence_logprob": 0.0711,
+        "confidence_sampling": 0.861
+      },
+      {
+        "step_id": 2,
+        "content": "The character of Aladdin was portrayed by actor Will Smith in the live-action film version of Aladdin.",
+        "confidence_logprob": 0.1803,
+        "confidence_sampling": 0.8707
+      },
+      {
+        "step_id": 3,
+        "content": "Will Smith is known for his work as a rapper and actor, but he has also worked as a consultant to help organizations improve their performance.",
+        "confidence_logprob": 0.2417,
+        "confidence_sampling": 0.8909
+      }
+    ]
+  },
+  {
+    "sample_id": "5a87ab905542996e4f3088c1",
+    "dataset": "hotpotqa",
+    "question": "The arena where the Lewiston Maineiacs played their home games can seat how many people?",
+    "complexity": "complex",
+    "final_answer": "7,586",
+    "ground_truth": "3,677 seated",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Lewiston Maineiacs played their home games at the Androscoggin Bank Coliseum.",
+        "confidence_logprob": 0.2215,
+        "confidence_sampling": 0.9254
+      },
+      {
+        "step_id": 2,
+        "content": "The Androscoggin Bank Coliseum has a seating capacity of 7,586 people.",
+        "confidence_logprob": 0.2731,
+        "confidence_sampling": 0.9606
+      }
+    ]
+  },
+  {
+    "sample_id": "5a7bbb64554299042af8f7cc",
+    "dataset": "hotpotqa",
+    "question": "Who is older, Annie Morton or Terry Richardson?",
+    "complexity": "medium",
+    "final_answer": "Terry Richardson is older.",
+    "ground_truth": "Terry Richardson",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Annie Morton was born on July 23, 1968. Terry Richardson was born on January 24, 1965.",
+        "confidence_logprob": 0.1611,
+        "confidence_sampling": 0.8664
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8db19d5542994ba4e3dd00",
+    "dataset": "hotpotqa",
+    "question": "Are Local H and For Against both from the United States?",
+    "complexity": "medium",
+    "final_answer": "yes",
+    "ground_truth": "yes",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Local H is a band from the United States.",
+        "confidence_logprob": 0.137,
+        "confidence_sampling": 0.8931
+      }
+    ]
+  },
+  {
+    "sample_id": "5a7166395542994082a3e814",
+    "dataset": "hotpotqa",
+    "question": "What is the name of the fight song of the university whose main campus is in Lawrence, Kansas and whose branch campuses are in the Kansas City metropolitan area?",
+    "complexity": "complex",
+    "final_answer": "Rock Chalk Jayhawk",
+    "ground_truth": "Kansas Song",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The main campus of the university is in Lawrence, Kansas.",
+        "confidence_logprob": 0.1539,
+        "confidence_sampling": 0.9071
+      },
+      {
+        "step_id": 2,
+        "content": "The branch campuses of the university are in the Kansas City metropolitan area.",
+        "confidence_logprob": 0.3151,
+        "confidence_sampling": 0.9057
+      },
+      {
+        "step_id": 3,
+        "content": "The name of the fight song of the university is Rock Chalk Jayhawk.",
+        "confidence_logprob": 0.174,
+        "confidence_sampling": 0.9211
+      }
+    ]
+  },
+  {
+    "sample_id": "5a877e5d5542993e715abf7d",
+    "dataset": "hotpotqa",
+    "question": "What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and T\u00e9a Leoni?",
+    "complexity": "complex",
+    "final_answer": "David S. Goyer",
+    "ground_truth": "David Weissman",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The screenwriter with credits for \"Evolution\" is David S. Goyer.",
+        "confidence_logprob": 0.1684,
+        "confidence_sampling": 0.88
+      },
+      {
+        "step_id": 2,
+        "content": "David S. Goyer co-wrote the film \"Gone in 60 Seconds\" starring Nicolas Cage and Angelina Jolie.",
+        "confidence_logprob": 0.36,
+        "confidence_sampling": 0.9371
+      },
+      {
+        "step_id": 3,
+        "content": "David S. Goyer also co-wrote the film \"The Devil's Advocate\" starring Taylor Swift and Chris Hemsworth.",
+        "confidence_logprob": 0.1573,
+        "confidence_sampling": 0.8907
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab3b0bf5542992ade7c6e39",
+    "dataset": "hotpotqa",
+    "question": "What year did Guns N Roses perform a promo for a movie starring Arnold Schwarzenegger as a former New York Police detective?",
+    "complexity": "complex",
+    "final_answer": "2012",
+    "ground_truth": "1999",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Guns N Roses performed a promo for the movie \"End of Watch\" in 2012.",
+        "confidence_logprob": 0.1251,
+        "confidence_sampling": 0.8726
+      },
+      {
+        "step_id": 2,
+        "content": "Arnold Schwarzenegger starred as a former New York Police detective in the movie \"The Last Stand\" in 2013.",
+        "confidence_logprob": 0.3237,
+        "confidence_sampling": 0.8765
+      },
+      {
+        "step_id": 3,
+        "content": "Guns N Roses did not perform a promo for the movie \"The Last Stand\".",
+        "confidence_logprob": 0.287,
+        "confidence_sampling": 0.9188
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab56e32554299637185c594",
+    "dataset": "hotpotqa",
+    "question": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+    "complexity": "medium",
+    "final_answer": "yes",
+    "ground_truth": "no",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Random House Tower is a commercial building in New York City.",
+        "confidence_logprob": 0.0479,
+        "confidence_sampling": 0.8456
+      },
+      {
+        "step_id": 2,
+        "content": "888 7th Avenue is a commercial building in New York City.",
+        "confidence_logprob": 0.3544,
+        "confidence_sampling": 0.9421
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab6d09255429954757d337d",
+    "dataset": "hotpotqa",
+    "question": "The football manager who recruited David Beckham managed Manchester United during what timeframe?",
+    "complexity": "medium",
+    "final_answer": "1989 to 2014",
+    "ground_truth": "from 1986 to 2013",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "David Beckham was signed by Sir Alex Ferguson.",
+        "confidence_logprob": 0.0537,
+        "confidence_sampling": 0.9405
+      },
+      {
+        "step_id": 2,
+        "content": "Sir Alex Ferguson managed Manchester United from 1989 to 2014.",
+        "confidence_logprob": 0.2397,
+        "confidence_sampling": 0.9106
+      }
+    ]
+  },
+  {
+    "sample_id": "5a75e05c55429976ec32bc5f",
+    "dataset": "hotpotqa",
+    "question": "Brown State Fishing Lake is in a country that has a population of how many inhabitants ?",
+    "complexity": "complex",
+    "final_answer": "331 million",
+    "ground_truth": "9,984",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Brown State Fishing Lake is located in the United States.",
+        "confidence_logprob": 0.164,
+        "confidence_sampling": 0.9264
+      },
+      {
+        "step_id": 2,
+        "content": "The population of the United States is approximately 331 million people.",
+        "confidence_logprob": 0.2574,
+        "confidence_sampling": 0.9301
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab3e45655429976abd1bcd4",
+    "dataset": "hotpotqa",
+    "question": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
+    "complexity": "complex",
+    "final_answer": "New England Conference",
+    "ground_truth": "the North Atlantic Conference",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Vermont Catamounts men's soccer team currently competes in the Northeast Conference (NEC).",
+        "confidence_logprob": 0.2045,
+        "confidence_sampling": 0.9392
+      },
+      {
+        "step_id": 2,
+        "content": "The NEC was formerly known as the New England Conference from 1988 to 1996.",
+        "confidence_logprob": 0.276,
+        "confidence_sampling": 0.9191
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab29c24554299449642c932",
+    "dataset": "hotpotqa",
+    "question": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
+    "complexity": "medium",
+    "final_answer": "yes",
+    "ground_truth": "yes",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Giuseppe Verdi is an Italian composer known for his operas.",
+        "confidence_logprob": 0.0877,
+        "confidence_sampling": 0.8989
+      },
+      {
+        "step_id": 2,
+        "content": "Ambroise Thomas is a French composer known for his operas.",
+        "confidence_logprob": 0.3589,
+        "confidence_sampling": 0.995
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae0d4c9554299603e418468",
+    "dataset": "hotpotqa",
+    "question": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?",
+    "complexity": "complex",
+    "final_answer": "1961-1963",
+    "ground_truth": "1969 until 1974",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of President John F. Kennedy.",
+        "confidence_logprob": 0.2447,
+        "confidence_sampling": 0.9238
+      },
+      {
+        "step_id": 2,
+        "content": "President John F. Kennedy served from 1961 to 1963.",
+        "confidence_logprob": 0.3873,
+        "confidence_sampling": 0.9576
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8133725542995ce29dcbdb",
+    "dataset": "hotpotqa",
+    "question": "Which writer was from England, Henry Roth or Robert Erskine Childers?",
+    "complexity": "medium",
+    "final_answer": "Henry Roth",
+    "ground_truth": "Robert Erskine Childers DSC",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Henry Roth is a British-American author.",
+        "confidence_logprob": 0.0311,
+        "confidence_sampling": 0.8718
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae7a8175542993210983ed8",
+    "dataset": "hotpotqa",
+    "question": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
+    "complexity": "complex",
+    "final_answer": "Carlos Sainz Jr.",
+    "ground_truth": "Pedro Rodr\u00edguez",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Force India driver born in 1990 is Sergio Perez.",
+        "confidence_logprob": 0.2444,
+        "confidence_sampling": 0.8785
+      },
+      {
+        "step_id": 2,
+        "content": "Another Mexican Formula One race car driver who has held the podium is Carlos Sainz Jr.",
+        "confidence_logprob": 0.2335,
+        "confidence_sampling": 0.8592
+      },
+      {
+        "step_id": 3,
+        "content": "Carlos Sainz Jr. has won a Grand Prix in Mexico City, which is the only Mexican Formula One race.",
+        "confidence_logprob": 0.0885,
+        "confidence_sampling": 0.9143
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae6050f55429929b0807a5e",
+    "dataset": "hotpotqa",
+    "question": "This singer of A Rather Blustery Day also voiced what hedgehog?",
+    "complexity": "medium",
+    "final_answer": "<unknown>",
+    "ground_truth": "Sonic",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The singer of A Rather Blustery Day is Peter Mayer.",
+        "confidence_logprob": 0.1016,
+        "confidence_sampling": 0.9013
+      }
+    ]
+  },
+  {
+    "sample_id": "5adddccd5542997dc7907069",
+    "dataset": "hotpotqa",
+    "question": "Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",
+    "complexity": "complex",
+    "final_answer": "iPhone and iPad",
+    "ground_truth": "keyboard function keys",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Apple Remote was originally designed to interact with the Macintosh computer.",
+        "confidence_logprob": 0.0924,
+        "confidence_sampling": 0.8842
+      },
+      {
+        "step_id": 2,
+        "content": "Other devices that can control the program Apple Remote was originally designed to interact with include the iPhone and iPad.",
+        "confidence_logprob": 0.1507,
+        "confidence_sampling": 0.8844
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae2070a5542994d89d5b313",
+    "dataset": "hotpotqa",
+    "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
+    "complexity": "complex",
+    "final_answer": "Barely Drawn Boy",
+    "ground_truth": "Badly Drawn Boy",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Barely Drawn Boy is a one-man band.",
+        "confidence_logprob": 0.0371,
+        "confidence_sampling": 0.8896
+      },
+      {
+        "step_id": 2,
+        "content": "Wolf Alice has four members.",
+        "confidence_logprob": 0.1574,
+        "confidence_sampling": 0.907
+      },
+      {
+        "step_id": 3,
+        "content": "Since Badly Drawn Boy is a one-man band, it has a higher instrument to person ratio than Wolf Alice.",
+        "confidence_logprob": 0.2349,
+        "confidence_sampling": 0.8999
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae22b8d554299234fd0440f",
+    "dataset": "hotpotqa",
+    "question": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
+    "complexity": "complex",
+    "final_answer": "Peter Schmeichel",
+    "ground_truth": "World's Best Goalkeeper",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Kasper Schmeichel's father is Peter Schmeichel.",
+        "confidence_logprob": 0.2404,
+        "confidence_sampling": 0.8776
+      },
+      {
+        "step_id": 2,
+        "content": "Peter Schmeichel was voted the best goalkeeper in Europe by the IFFHS in 1992.",
+        "confidence_logprob": 0.3244,
+        "confidence_sampling": 0.924
+      },
+      {
+        "step_id": 3,
+        "content": "Therefore, Peter Schmeichel was Kasper Schmeichel's father and the best goalkeeper in Europe by the IFFHS in 1992.",
+        "confidence_logprob": 0.3313,
+        "confidence_sampling": 0.9252
+      }
+    ]
+  },
+  {
+    "sample_id": "5a722b8655429971e9dc9329",
+    "dataset": "hotpotqa",
+    "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
+    "complexity": "complex",
+    "final_answer": "Doris Day",
+    "ground_truth": "Barton Lee Hazlewood",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The writer of These Boots Are Made for Walkin' is Doris Day.",
+        "confidence_logprob": 0.1412,
+        "confidence_sampling": 0.9402
+      },
+      {
+        "step_id": 2,
+        "content": "Doris Day died in 2011.",
+        "confidence_logprob": 0.132,
+        "confidence_sampling": 0.8741
+      },
+      {
+        "step_id": 3,
+        "content": "The writer of These Boots Are Made for Walkin' and the person who died in 2007 are not the same.",
+        "confidence_logprob": 0.2453,
+        "confidence_sampling": 0.8938
+      }
+    ]
+  },
+  {
+    "sample_id": "5adf37a95542995ec70e8f97",
+    "dataset": "hotpotqa",
+    "question": "The 2011\u201312 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
+    "complexity": "complex",
+    "final_answer": "1906",
+    "ground_truth": "1838",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Virginia Commonwealth University was founded in 1906.",
+        "confidence_logprob": 0.0456,
+        "confidence_sampling": 0.8869
+      },
+      {
+        "step_id": 2,
+        "content": "The 2011\u201312 VCU Rams men's basketball team represented Virginia Commonwealth University.",
+        "confidence_logprob": 0.3708,
+        "confidence_sampling": 0.8739
+      }
+    ]
+  },
+  {
+    "sample_id": "5abd259d55429924427fcf1a",
+    "dataset": "hotpotqa",
+    "question": "Are both Dictyosperma, and Huernia described as a genus?",
+    "complexity": "medium",
+    "final_answer": "yes",
+    "ground_truth": "yes",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Yes, Dictyosperma is described as a genus.",
+        "confidence_logprob": 0.1363,
+        "confidence_sampling": 0.8904
+      }
+    ]
+  },
+  {
+    "sample_id": "5a828c8355429966c78a6a50",
+    "dataset": "hotpotqa",
+    "question": "Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?",
+    "complexity": "complex",
+    "final_answer": "Henry J. Kaiser",
+    "ground_truth": "Henry J. Kaiser",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The founder of Kaiser Ventures corporation was Henry J. Kaiser.",
+        "confidence_logprob": 0.1465,
+        "confidence_sampling": 0.8845
+      },
+      {
+        "step_id": 2,
+        "content": "Henry J. Kaiser became known as the father of modern American shipbuilding.",
+        "confidence_logprob": 0.2921,
+        "confidence_sampling": 0.8989
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8a3e745542996c9b8d5e70",
+    "dataset": "hotpotqa",
+    "question": "What is the name for the adventure in \"Tunnels and Trolls\", a game designed by Ken St. Andre?",
+    "complexity": "complex",
+    "final_answer": "unknown",
+    "ground_truth": "Arena of Khazan",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The game \"Tunnels and Trolls\" was designed by Ken St. Andre.",
+        "confidence_logprob": 0.2408,
+        "confidence_sampling": 0.8867
+      },
+      {
+        "step_id": 2,
+        "content": "Ken St. Andre is known for designing adventure games.",
+        "confidence_logprob": 0.1009,
+        "confidence_sampling": 0.8901
+      },
+      {
+        "step_id": 3,
+        "content": "The name of the adventure in \"Tunnels and Trolls\" is unknown.",
+        "confidence_logprob": 0.1588,
+        "confidence_sampling": 0.898
+      }
+    ]
+  },
+  {
+    "sample_id": "5ac23ff0554299636651994d",
+    "dataset": "hotpotqa",
+    "question": "When was Poison's album \"Shut Up, Make Love\" released?",
+    "complexity": "medium",
+    "final_answer": "1986",
+    "ground_truth": "2000",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Poison's album \"Shut Up, Make Love\" was released in 1986.",
+        "confidence_logprob": 0.1967,
+        "confidence_sampling": 0.8801
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae4a3265542995ad6573de5",
+    "dataset": "hotpotqa",
+    "question": "Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?",
+    "complexity": "medium",
+    "final_answer": "Japan",
+    "ground_truth": "Fujioka, Gunma",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Buck-Tick is a Japanese rock band.",
+        "confidence_logprob": 0.1353,
+        "confidence_sampling": 0.9114
+      }
+    ]
+  },
+  {
+    "sample_id": "5ae0361155429925eb1afc2c",
+    "dataset": "hotpotqa",
+    "question": "Which French ace pilot and adventurer fly L'Oiseau Blanc",
+    "complexity": "medium",
+    "final_answer": "Charles Lindbergh",
+    "ground_truth": "Charles Eug\u00e8ne",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The French ace pilot and adventurer who flew L'Oiseau Blanc was Charles Lindbergh.",
+        "confidence_logprob": 0.1998,
+        "confidence_sampling": 0.8524
+      }
+    ]
+  },
+  {
+    "sample_id": "5abc0a5d5542993f40c73c64",
+    "dataset": "hotpotqa",
+    "question": "Are Freakonomics and In the Realm of the Hackers both American documentaries?",
+    "complexity": "medium",
+    "final_answer": "yes",
+    "ground_truth": "no",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Freakonomics is an American documentary.",
+        "confidence_logprob": 0.036,
+        "confidence_sampling": 0.8913
+      },
+      {
+        "step_id": 2,
+        "content": "In the Realm of the Hackers is an American documentary.",
+        "confidence_logprob": 0.2665,
+        "confidence_sampling": 0.8889
+      }
+    ]
+  },
+  {
+    "sample_id": "5a7cc50e554299452d57ba3e",
+    "dataset": "hotpotqa",
+    "question": "Which band, Letters to Cleo or Screaming Trees, had more members?",
+    "complexity": "medium",
+    "final_answer": "Letters to Cleo",
+    "ground_truth": "Letters to Cleo",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Letters to Cleo has 5 members.",
+        "confidence_logprob": 0.0426,
+        "confidence_sampling": 0.9016
+      },
+      {
+        "step_id": 2,
+        "content": "Screaming Trees had 4 members.",
+        "confidence_logprob": 0.2711,
+        "confidence_sampling": 0.9577
+      }
+    ]
+  },
+  {
+    "sample_id": "5abf63f15542997ec76fd3ea",
+    "dataset": "hotpotqa",
+    "question": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
+    "complexity": "complex",
+    "final_answer": "March 3, 1918",
+    "ground_truth": "October 1922",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when the Treaty of Brest-Litovsk was signed.",
+        "confidence_logprob": 0.2606,
+        "confidence_sampling": 0.9018
+      },
+      {
+        "step_id": 2,
+        "content": "The Treaty of Brest-Litovsk was signed on March 3, 1918.",
+        "confidence_logprob": 0.3701,
+        "confidence_sampling": 0.9249
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8ef2a75542995a26add583",
+    "dataset": "hotpotqa",
+    "question": "Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?",
+    "complexity": "complex",
+    "final_answer": "The year of Carlo Rovelli's birth",
+    "ground_truth": "2000",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of Seven Brief Lessons on Physics is Carlo Rovelli.",
+        "confidence_logprob": 0.2833,
+        "confidence_sampling": 0.9361
+      },
+      {
+        "step_id": 2,
+        "content": "Carlo Rovelli is an Italian physicist.",
+        "confidence_logprob": 0.2872,
+        "confidence_sampling": 0.9212
+      },
+      {
+        "step_id": 3,
+        "content": "Since Carlo Rovelli is an Italian physicist, he has worked in France since the year of his birth.",
+        "confidence_logprob": 0.0896,
+        "confidence_sampling": 0.8979
+      }
+    ]
+  },
+  {
+    "sample_id": "5a80721b554299485f5985ef",
+    "dataset": "hotpotqa",
+    "question": "The Livesey Hal War Memorial commemorates the fallen of which war, that had over 60 million casualties?",
+    "complexity": "complex",
+    "final_answer": "World War II",
+    "ground_truth": "World War II",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Livesey Hal War Memorial commemorates the fallen of World War II.",
+        "confidence_logprob": 0.174,
+        "confidence_sampling": 0.9095
+      },
+      {
+        "step_id": 2,
+        "content": "World War II had over 60 million casualties.",
+        "confidence_logprob": 0.3161,
+        "confidence_sampling": 0.885
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab51dae5542991779162d82",
+    "dataset": "hotpotqa",
+    "question": "Are both Elko Regional Airport and Gerald R. Ford International Airport located in Michigan?",
+    "complexity": "medium",
+    "final_answer": "no",
+    "ground_truth": "no",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Elko Regional Airport is located in Elko, Nevada.",
+        "confidence_logprob": 0.1295,
+        "confidence_sampling": 0.8799
+      },
+      {
+        "step_id": 2,
+        "content": "Gerald R. Ford International Airport is located in Grand Rapids, Michigan.",
+        "confidence_logprob": 0.3959,
+        "confidence_sampling": 0.9575
+      }
+    ]
+  },
+  {
+    "sample_id": "5a7571135542992d0ec05f98",
+    "dataset": "hotpotqa",
+    "question": "Ralph Hefferline was a psychology professor at a university that is located in what city?",
+    "complexity": "complex",
+    "final_answer": "Los Angeles, California",
+    "ground_truth": "New York City",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Ralph Hefferline was a psychology professor at the University of California, Los Angeles.",
+        "confidence_logprob": 0.1041,
+        "confidence_sampling": 0.8819
+      },
+      {
+        "step_id": 2,
+        "content": "The University of California is located in Los Angeles, California.",
+        "confidence_logprob": 0.097,
+        "confidence_sampling": 0.8998
+      }
+    ]
+  },
+  {
+    "sample_id": "5a7a0e1e5542990783324e1a",
+    "dataset": "hotpotqa",
+    "question": "Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?",
+    "complexity": "complex",
+    "final_answer": "The Manchester Terrier and the Scotch Collie have different ancestry.",
+    "ground_truth": "Scotch Collie",
+    "parse_method": "fallback_sentence",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?\",\n  \"hotpotqa\",\n  \"complex\",\n   \n \n  1,\n  \"The Manchester Terrier is a breed of dog that descended from the Toy Poodle.\",\n  0.85\n ,\n \n  2,\n  \"The Scotch Collie is a breed of dog that descended from the Scottish Highland Whitehair.\",\n  0.85\n ,\n \n  3,\n  \"Both the Toy Poodle and the Scottish Highland Whitehair are ancestors of the Gordon Setter and the Irish Setter.\",\n  0.9\n \n ,\n  \"The Manchester Terrier and the Scotch Collie have different ancestry.",
+        "confidence_logprob": 0.0896,
+        "confidence_sampling": 0.9154
+      }
+    ]
+  },
+  {
+    "sample_id": "5a74106b55429979e288289e",
+    "dataset": "hotpotqa",
+    "question": "Where is the company that Sachin Warrier worked for as a software engineer headquartered? ",
+    "complexity": "medium",
+    "final_answer": "<Microsoft>",
+    "ground_truth": "Mumbai",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Sachin Warrier worked for Microsoft as a software engineer.",
+        "confidence_logprob": 0.1114,
+        "confidence_sampling": 0.9014
+      }
+    ]
+  },
+  {
+    "sample_id": "5a79311755429970f5fffe67",
+    "dataset": "hotpotqa",
+    "question": "A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",
+    "complexity": "complex",
+    "final_answer": "1964",
+    "ground_truth": "1962",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The manga series \"Toradora!\" was written and illustrated by Yasuko Aikawa.",
+        "confidence_logprob": 0.1613,
+        "confidence_sampling": 0.8754
+      },
+      {
+        "step_id": 2,
+        "content": "Yasuko Aikawa was born in 1964.",
+        "confidence_logprob": 0.2881,
+        "confidence_sampling": 0.9433
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab2d3df554299194fa9352c",
+    "dataset": "hotpotqa",
+    "question": "The battle in which Giuseppe Arimondi lost his life secured what for Ethiopia?",
+    "complexity": "medium",
+    "final_answer": "independence",
+    "ground_truth": "sovereignty",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Giuseppe Arimondi was an Italian soldier who fought in the Battle of Adwa.",
+        "confidence_logprob": 0.1567,
+        "confidence_sampling": 0.9141
+      },
+      {
+        "step_id": 2,
+        "content": "The Battle of Adwa was a decisive victory for Ethiopia against Italy, securing its independence from foreign rule.",
+        "confidence_logprob": 0.2445,
+        "confidence_sampling": 0.9199
+      }
+    ]
+  },
+  {
+    "sample_id": "5a760ab65542994ccc918697",
+    "dataset": "hotpotqa",
+    "question": "Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under which United States Vice President?",
+    "complexity": "complex",
+    "final_answer": "Lyndon B. Johnson",
+    "ground_truth": "Nelson Rockefeller",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Alfred Balk served as the secretary of the Committee on the Employment of Minority Groups in the News Media under President Lyndon B. Johnson.",
+        "confidence_logprob": 0.2854,
+        "confidence_sampling": 0.9117
+      }
+    ]
+  },
+  {
+    "sample_id": "5a7d54165542995f4f402256",
+    "dataset": "hotpotqa",
+    "question": "A medieval fortress in Dirleton, East Lothian, Scotland borders on the south side of what coastal area?",
+    "complexity": "complex",
+    "final_answer": "Port Seton",
+    "ground_truth": "Yellowcraig",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The coastal area that borders the south side of Dirleton is called Port Seton.",
+        "confidence_logprob": 0.0763,
+        "confidence_sampling": 0.9268
+      },
+      {
+        "step_id": 2,
+        "content": "Port Seton is a small village located on the east coast of Scotland.",
+        "confidence_logprob": 0.2167,
+        "confidence_sampling": 0.9035
+      }
+    ]
+  },
+  {
+    "sample_id": "5ab859a955429934fafe6d7b",
+    "dataset": "hotpotqa",
+    "question": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
+    "complexity": "complex",
+    "final_answer": "Paul McCartney",
+    "ground_truth": "Phil Spector",
+    "parse_method": "schema",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The song is 'Black', and it was written by Paul McCartney.",
+        "confidence_logprob": 0.0765,
+        "confidence_sampling": 0.8693
+      },
+      {
+        "step_id": 2,
+        "content": "Paul McCartney is a member of The Beatles, which released the album Abbey Road in 1969.",
+        "confidence_logprob": 0.157,
+        "confidence_sampling": 0.862
+      },
+      {
+        "step_id": 3,
+        "content": "Abbey Road was the first track on the box set Back to Mono, which was released in 2009.",
+        "confidence_logprob": 0.1538,
+        "confidence_sampling": 0.9082
+      }
+    ]
+  },
+  {
+    "sample_id": "5add61d65542995b365fab21",
+    "dataset": "hotpotqa",
+    "question": "What type of forum did a former Soviet statesman initiate?",
+    "complexity": "medium",
+    "final_answer": "Mikhail Gorbachev initiated a political forum.",
+    "ground_truth": "Organizations could come together to address global issues",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The former Soviet statesman who initiated the forum was Mikhail Gorbachev.",
+        "confidence_logprob": 0.2077,
+        "confidence_sampling": 0.8688
+      }
+    ]
+  },
+  {
+    "sample_id": "5a8e068b5542995085b37384",
+    "dataset": "hotpotqa",
+    "question": "Are Ferocactus and Silene both types of plant?",
+    "complexity": "medium",
+    "final_answer": "no",
+    "ground_truth": "yes",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Ferocactus is a type of cactus.",
+        "confidence_logprob": 0.0837,
+        "confidence_sampling": 0.8933
+      },
+      {
+        "step_id": 2,
+        "content": "Silene is a type of flowering plant.",
+        "confidence_logprob": 0.2942,
+        "confidence_sampling": 0.9105
+      }
+    ]
+  },
+  {
+    "sample_id": "5abbf698554299114383a0b5",
+    "dataset": "hotpotqa",
+    "question": "Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?",
+    "complexity": "complex",
+    "final_answer": "Vickers Wellington",
+    "ground_truth": "English Electric Canberra",
+    "parse_method": "schema_repaired",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The British first-generation jet-powered medium bomber used in the South West Pacific theatre of World War II was the Vickers Wellington.",
+        "confidence_logprob": 0.2287,
+        "confidence_sampling": 0.8898
+      }
+    ]
+  }
+]
