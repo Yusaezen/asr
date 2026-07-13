@@ -1,0 +1,1022 @@
+[
+  {
+    "question": "Who is the spouse of the Green performer?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Green is Steve Hillage.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Miquette Giraudy",
+    "raw_output": "{\n\"question\": \"Who is the spouse of the Green performer?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The performer of Green is Steve Hillage.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"Miquette Giraudy\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Miquette Giraudy",
+    "sample_id": "2hop__460946_294723",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who founded the company that distributed the film UHF?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The film UHF was distributed by Orion Pictures.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Orion Pictures",
+    "raw_output": "{\n\"question\": \"Who founded the company that distributed the film UHF?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The film UHF was distributed by Orion Pictures.\",\n\"confidence\": 0.85\n}\n],\n\"final_answer\": \"Orion Pictures\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Mike Medavoy",
+    "sample_id": "2hop__252311_366220",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What administrative territorial entity is the owner of Ciudad Deportiva located?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Ciudad Deportiva is located in Mexico City.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Mexico City",
+    "raw_output": "{\n\"question\": \"What administrative territorial entity is the owner of Ciudad Deportiva located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Ciudad Deportiva is located in Mexico City.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"Mexico City\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Tamaulipas",
+    "sample_id": "2hop__701895_752697",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Where is Ulrich Walter's employer headquartered?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Ulrich Walter's employer is the German Aerospace Center.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Cologne",
+    "raw_output": "{\n\"question\": \"Where is Ulrich Walter's employer headquartered?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Ulrich Walter's employer is the German Aerospace Center.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"Cologne\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Cologne",
+    "sample_id": "2hop__259228_793698",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Which company owns the manufacturer of Learjet 60?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The manufacturer of Learjet 60 is Bombardier Aerospace.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "<one atomic inference>",
+    "raw_output": "{\n\"question\": \"Which company owns the manufacturer of Learjet 60?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The manufacturer of Learjet 60 is Bombardier Aerospace.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"<one atomic inference>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Bombardier Inc.",
+    "sample_id": "2hop__481349_302087",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the child of Caroline LeRoy's spouse?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Caroline LeRoy's spouse is Daniel Webster.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Fletcher Webster",
+    "raw_output": "{\n\"question\": \"Who is the child of Caroline LeRoy's spouse?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Caroline LeRoy's spouse is Daniel Webster.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"Fletcher Webster\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Fletcher Webster",
+    "sample_id": "2hop__697790_864352",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the grandmother of Philippe, Duke of Orl\u00e9ans?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Philippe, Duke of Orl\u00e9ans' mother is Princess Isabelle d'Orl\u00e9ans.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "Princess Isabelle d'Orl\u00e9ans' mother is Princess Marie-Th\u00e9r\u00e8se de Bourbon.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "Princess Marie-Th\u00e9r\u00e8se de Bourbon",
+    "raw_output": "{\n\"question\": \"Who is the grandmother of Philippe, Duke of Orl\u00e9ans?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Philippe, Duke of Orl\u00e9ans' mother is Princess Isabelle d'Orl\u00e9ans.\",\n\"confidence\": 0.95\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Princess Isabelle d'Orl\u00e9ans' mother is Princess Marie-Th\u00e9r\u00e8se de Bourbon.\",\n\"confidence\": 0.95\n}\n],\n\"final\\_answer\": \"Princess Marie-Th\u00e9r\u00e8se de Bourbon\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Marie de' Medici",
+    "sample_id": "2hop__207476_625987",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What is the goal of the group that European Movement Germany is a member of?",
+    "dataset": "musique",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "European Movement Germany is a member of the European Union.",
+        "confidence": 0.9
+      },
+      {
+        "step_id": 2,
+        "content": "The goal of the European Union is to create a single market and monetary union among its member states.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "The goal of the group that European Movement Germany is a member of is to create a single market and monetary union among its member states.",
+    "raw_output": "{\n\"question\": \"What is the goal of the group that European Movement Germany is a member of?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"European Movement Germany is a member of the European Union.\",\n\"confidence\": 0.9\n},\n{\n\"step\\_id\": 2,\n\"content\": \"The goal of the European Union is to create a single market and monetary union among its member states.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"The goal of the group that European Movement Germany is a member of is to create a single market and monetary union among its member states.\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "European integration",
+    "sample_id": "2hop__390947_232243",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What company succeeded the owner of Empire Sports Network?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Empire Sports Network was sold to ESPN.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "ESPN",
+    "raw_output": "{\n\"question\": \"What company succeeded the owner of Empire Sports Network?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Empire Sports Network was sold to ESPN.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"ESPN\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Time Warner Cable",
+    "sample_id": "2hop__354635_174222",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What province shares a border with the province where Lago District is located?",
+    "dataset": "musique",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The province of Lago District is in Canada.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 2,
+        "content": "Canada has ten provinces and three territories.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 3,
+        "content": "The province of Lago District shares a border with the province of British Columbia.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "British Columbia",
+    "raw_output": "{\n\"question\": \"What province shares a border with the province where Lago District is located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The province of Lago District is in Canada.\",\n\"confidence\": 0.85\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Canada has ten provinces and three territories.\",\n\"confidence\": 0.85\n},\n{\n\"step\\_id\": 3,\n\"content\": \"The province of Lago District shares a border with the province of British Columbia.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"British Columbia\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Cabo Delgado Province",
+    "sample_id": "2hop__635187_861533",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What league does the team that plays in Stadio Ciro Vigorito play for?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The team that plays in Stadio Ciro Vigorito is the AC Milan football club.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "AC Milan",
+    "raw_output": "{\n\"question\": \"What league does the team that plays in Stadio Ciro Vigorito play for?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The team that plays in Stadio Ciro Vigorito is the AC Milan football club.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"AC Milan\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Lega Pro Prima Divisione",
+    "sample_id": "2hop__166824_185403",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What is a notable work written by the author of The Timothy files?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of The Timothy files is Stephen King.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "A notable work written by Stephen King is It.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "It.",
+    "raw_output": "{\n\"question\": \"What is a notable work written by the author of The Timothy files?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The author of The Timothy files is Stephen King.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"A notable work written by Stephen King is It.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"It.\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Anderson Tapes",
+    "sample_id": "2hop__698577_851686",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "In which borough was Callum McManaman born?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Callum McManaman was born in Liverpool.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Liverpool",
+    "raw_output": "{\n\"question\": \"In which borough was Callum McManaman born?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Callum McManaman was born in Liverpool.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"Liverpool\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Knowsley",
+    "sample_id": "2hop__362107_652514",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What other county does the county where Imperial is located share a border with?",
+    "dataset": "musique",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Imperial is in the state of California.",
+        "confidence": 0.9
+      },
+      {
+        "step_id": 2,
+        "content": "California shares a border with Nevada.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Nevada",
+    "raw_output": "{\n\"question\": \"What other county does the county where Imperial is located share a border with?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Imperial is in the state of California.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\"content\": \"California shares a border with Nevada.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"Nevada\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Crockett County",
+    "sample_id": "2hop__402530_774333",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "In what county is William W. Blair's birthplace located?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "William W. Blair was born in New York City.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "New York",
+    "raw_output": "{\n\"question\": \"In what county is William W. Blair's birthplace located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"William W. Blair was born in New York City.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"New York\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Orleans County",
+    "sample_id": "2hop__195917_575657",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What award did the author of The Red Tree receive?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of The Red Tree is David Lynch.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "David Lynch received the Academy Award for Best Director for Blue Velvet in 1986.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Academy Award for Best Director for Blue Velvet in 1986",
+    "raw_output": "{\n\"question\": \"What award did the author of The Red Tree receive?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The author of The Red Tree is David Lynch.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"David Lynch received the Academy Award for Best Director for Blue Velvet in 1986.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"Academy Award for Best Director for Blue Velvet in 1986\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Academy Award for Best Animated Short Film",
+    "sample_id": "2hop__683835_709167",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Where was Tyler MacDuff's child educated?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Tyler MacDuff is a character in the film The Patriot.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 2,
+        "content": "The Patriot was directed by Rob Reiner.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Rob Reiner",
+    "raw_output": "{\n\"question\": \"Where was Tyler MacDuff's child educated?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Tyler MacDuff is a character in the film The Patriot.\",\n\"confidence\": 0.85\n},\n{\n\"step_id\": 2,\n\"content\": \"The Patriot was directed by Rob Reiner.\",\n\"confidence\": 0.85\n}\n],\n\"final_answer\": \"Rob Reiner\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Blair High School",
+    "sample_id": "2hop__197470_271394",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the spouse of the Rabbit Hole's producer?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The producer of Rabbit Hole is Tim Burton.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "<one atomic inference>",
+    "raw_output": "{\n\"question\": \"Who is the spouse of the Rabbit Hole's producer?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The producer of Rabbit Hole is Tim Burton.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"<one atomic inference>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Keith Urban",
+    "sample_id": "2hop__458131_174974",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the child of Sigrid Eskilsdotter's child?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Sigrid Eskilsdotter's child is a musician named Ola Gjeilo.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "<one atomic inference>",
+    "raw_output": "{\n\"question\": \"Who is the child of Sigrid Eskilsdotter's child?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Sigrid Eskilsdotter's child is a musician named Ola Gjeilo.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"<one atomic inference>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Svante Stensson Sture",
+    "sample_id": "2hop__299142_347613",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "In which county is Kimbrough Memorial Stadium located?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Kimbrough Memorial Stadium is located in Fort Hood, Texas.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Fort Hood, Texas",
+    "raw_output": "{\n\"question\": \"In which county is Kimbrough Memorial Stadium located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Kimbrough Memorial Stadium is located in Fort Hood, Texas.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"Fort Hood, Texas\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Randall County",
+    "sample_id": "2hop__528263_865831",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What record label is the performer of Almost Made Ya signed to?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Almost Made Ya is Gwar.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Gwar",
+    "raw_output": "{\n\"question\": \"What record label is the performer of Almost Made Ya signed to?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The performer of Almost Made Ya is Gwar.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"Gwar\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Derrty Entertainment",
+    "sample_id": "2hop__569582_304416",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Where was the author of Hannibal and Scipio educated at?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of Hannibal and Scipio is James Clerk Maxwell.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "James Clerk Maxwell was educated at the University of Edinburgh.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "University of Edinburgh",
+    "raw_output": "{\n\"question\": \"Where was the author of Hannibal and Scipio educated at?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The author of Hannibal and Scipio is James Clerk Maxwell.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"James Clerk Maxwell was educated at the University of Edinburgh.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"University of Edinburgh\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Exeter College",
+    "sample_id": "2hop__505860_650613",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "In which county is Southern Maryland Electric Cooperative headquartered?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Southern Maryland Electric Cooperative's headquarters are located in Charles County.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Charles County",
+    "raw_output": "{\n\"question\": \"In which county is Southern Maryland Electric Cooperative headquartered?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Southern Maryland Electric Cooperative's headquarters are located in Charles County.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"Charles County\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Charles County",
+    "sample_id": "2hop__821197_368148",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the child of the Victim of Romance performer?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Victim of Romance is John Lennon.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "John Lennon's child is Sean Ono Lennon.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "Sean Ono Lennon",
+    "raw_output": "{\n\"question\": \"Who is the child of the Victim of Romance performer?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The performer of Victim of Romance is John Lennon.\",\n\"confidence\": 0.95\n},\n{\n\"step\\_id\": 2,\n\"content\": \"John Lennon's child is Sean Ono Lennon.\",\n\"confidence\": 0.95\n}\n],\n\"final\\_answer\": \"Sean Ono Lennon\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Chynna Phillips",
+    "sample_id": "2hop__554167_451128",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What county was Tim Dubois born in?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Tim Dubois is a musician from the United States.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "United States",
+    "raw_output": "{\n\"question\": \"What county was Tim Dubois born in?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Tim Dubois is a musician from the United States.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"United States\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "McDonald County",
+    "sample_id": "2hop__702496_430061",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What record label did the person who is part of The Bruce Lee Band start?",
+    "dataset": "musique",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The person who is part of The Bruce Lee Band is David Tyson Gentry.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "David Tyson Gentry started the record label 'Sonic Mayhem'.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Sonic Mayhem",
+    "raw_output": "{\n\"question\": \"What record label did the person who is part of The Bruce Lee Band start?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The person who is part of The Bruce Lee Band is David Tyson Gentry.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"David Tyson Gentry started the record label 'Sonic Mayhem'.\",\n\"confidence\": 0.85\n}\n],\n\"final_answer\": \"Sonic Mayhem\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Asian Man Records",
+    "sample_id": "2hop__549146_223121",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What is another notable work made by the author of Miss Sara Sampson?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The author of Miss Sara Sampson is Charles Dickens.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "Another notable work made by Charles Dickens is A Tale of Two Cities.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "A Tale of Two Cities",
+    "raw_output": "{\n\"question\": \"What is another notable work made by the author of Miss Sara Sampson?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The author of Miss Sara Sampson is Charles Dickens.\",\n\"confidence\": 0.95\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Another notable work made by Charles Dickens is A Tale of Two Cities.\",\n\"confidence\": 0.95\n}\n],\n\"final\\_answer\": \"A Tale of Two Cities\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Emilia Galotti",
+    "sample_id": "2hop__647996_551681",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What instrument is played by the person from The Blackout All-Stars?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Blackout All-Stars is a band.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "band",
+    "raw_output": "{\n\"question\": \"What instrument is played by the person from The Blackout All-Stars?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The Blackout All-Stars is a band.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"band\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "conga",
+    "sample_id": "2hop__673655_316668",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What is the seat of the county where Van Hook Township is located?",
+    "dataset": "musique",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Van Hook Township is located in Pennsylvania.",
+        "confidence": 0.9
+      },
+      {
+        "step_id": 2,
+        "content": "Pennsylvania's county seat is Harrisburg.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Harrisburg",
+    "raw_output": "{\n\"question\": \"What is the seat of the county where Van Hook Township is located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Van Hook Township is located in Pennsylvania.\",\n\"confidence\": 0.9\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Pennsylvania's county seat is Harrisburg.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"Harrisburg\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Stanley",
+    "sample_id": "2hop__574419_270105",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the father of Edward Baring, 1st Baron Revelstoke's father?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Edward Baring, 1st Baron Revelstoke was the son of Sir Edward Baring.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "Sir Edward Baring was the son of John Baring.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "John Baring",
+    "raw_output": "{\n\"question\": \"Who is the father of Edward Baring, 1st Baron Revelstoke's father?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Edward Baring, 1st Baron Revelstoke was the son of Sir Edward Baring.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"Sir Edward Baring was the son of John Baring.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"John Baring\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Sir Francis Baring, 1st Baronet",
+    "sample_id": "2hop__403712_793210",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What group was the performer of Be the One a member of?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of Be the One is David Bowie.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "<unknown>",
+    "raw_output": "{\n\"question\": \"What group was the performer of Be the One a member of?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The performer of Be the One is David Bowie.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"<unknown>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Jackson 5",
+    "sample_id": "2hop__832795_350510",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the lead singer of the band performing Bang Bang Rock & Roll?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The band performing Bang Bang Rock & Roll is The Monkees.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "<one atomic inference>",
+    "raw_output": "{\n\"question\": \"Who is the lead singer of the band performing Bang Bang Rock & Roll?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The band performing Bang Bang Rock & Roll is The Monkees.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"<one atomic inference>\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Eddie Argos",
+    "sample_id": "2hop__744055_408817",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What is the network which National Cycle Route 57 is part of an example of?",
+    "dataset": "cycling",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "National Cycle Route 57 is part of the National Cycle Network.",
+        "confidence": 0.9
+      },
+      {
+        "step_id": 2,
+        "content": "The National Cycle Network is a network of cycling routes in the United Kingdom.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "National Cycle Network",
+    "raw_output": "{\n\"question\": \"What is the network which National Cycle Route 57 is part of an example of?\",\n\"dataset\": \"cycling\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"National Cycle Route 57 is part of the National Cycle Network.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\"content\": \"The National Cycle Network is a network of cycling routes in the United Kingdom.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"National Cycle Network\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "national cycling route network",
+    "sample_id": "2hop__726717_610238",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the spouse of the child of Peter Andreas Heiberg?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Peter Andreas Heiberg's child is Peter Heiberg.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 2,
+        "content": "Peter Heiberg's spouse is Anne-Lise Heiberg.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Anne-Lise Heiberg",
+    "raw_output": "{\n\"question\": \"Who is the spouse of the child of Peter Andreas Heiberg?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Peter Andreas Heiberg's child is Peter Heiberg.\",\n\"confidence\": 0.85\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Peter Heiberg's spouse is Anne-Lise Heiberg.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"Anne-Lise Heiberg\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Johanne Luise Heiberg",
+    "sample_id": "2hop__499577_617190",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "The Unwinding author volunteered for which organisation?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Unwinding author is Tom Rachman.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "<one atomic inference>",
+    "raw_output": "{\n\"question\": \"The Unwinding author volunteered for which organisation?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The Unwinding author is Tom Rachman.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"<one atomic inference>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Peace Corps",
+    "sample_id": "2hop__685280_510757",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What is the capital of the county that Pine Springs is located in?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Pine Springs is located in Apache County.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "The capital of Apache County is Phoenix.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "Phoenix",
+    "raw_output": "{\n\"question\": \"What is the capital of the county that Pine Springs is located in?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Pine Springs is located in Apache County.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"The capital of Apache County is Phoenix.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"Phoenix\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Van Horn",
+    "sample_id": "2hop__341305_332933",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What district is the headquarter of Julia's House located?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Julia's House is located in New York City.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "New York City",
+    "raw_output": "{\n\"question\": \"What district is the headquarter of Julia's House located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Julia's House is located in New York City.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"New York City\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "East Dorset",
+    "sample_id": "2hop__731228_609866",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the spouse of Young Man Luther's author?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Young Man Luther was written by Martin Luther.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "Martin Luther's spouse is Katherina von Bora.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "Katherina von Bora",
+    "raw_output": "{\n\"question\": \"Who is the spouse of Young Man Luther's author?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Young Man Luther was written by Martin Luther.\",\n\"confidence\": 0.95\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Martin Luther's spouse is Katherina von Bora.\",\n\"confidence\": 0.95\n}\n],\n\"final\\_answer\": \"Katherina von Bora\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Joan Erikson",
+    "sample_id": "2hop__693444_220151",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What record label did the performer of The Place and the Time belong to?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The performer of The Place and the Time is Peter Gabriel.",
+        "confidence": 0.95
+      },
+      {
+        "step_id": 2,
+        "content": "Peter Gabriel's record label is Real World Records.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "Real World Records",
+    "raw_output": "{\n\"question\": \"What record label did the performer of The Place and the Time belong to?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The performer of The Place and the Time is Peter Gabriel.\",\n\"confidence\": 0.95\n},\n{\n\"step_id\": 2,\n\"content\": \"Peter Gabriel's record label is Real World Records.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"Real World Records\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Columbia Records",
+    "sample_id": "2hop__235471_565925",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who is the child of the person who followed Tihomir of Serbia?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Tihomir of Serbia was succeeded by Peter II of Serbia.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 2,
+        "content": "Peter II of Serbia's child is Milo\u0161 Obrenovi\u0107.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "Milo\u0161 Obrenovi\u0107",
+    "raw_output": "{\n\"question\": \"Who is the child of the person who followed Tihomir of Serbia?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Tihomir of Serbia was succeeded by Peter II of Serbia.\",\n\"confidence\": 0.85\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Peter II of Serbia's child is Milo\u0161 Obrenovi\u0107.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"Milo\u0161 Obrenovi\u0107\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Saint Sava",
+    "sample_id": "2hop__310456_846599",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What team was Anna Benson's husband on?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Anna Benson's husband is David Benson.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 2,
+        "content": "David Benson was a member of the band 'The Benson Brothers'.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "The Benson Brothers",
+    "raw_output": "{\n\"question\": \"What team was Anna Benson's husband on?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Anna Benson's husband is David Benson.\",\n\"confidence\": 0.85\n},\n{\n\"step\\_id\": 2,\n\"content\": \"David Benson was a member of the band 'The Benson Brothers'.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"The Benson Brothers\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Pittsburgh Pirates",
+    "sample_id": "2hop__335418_279684",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What place does the administrative territorial entity that Juba is located in share a border with?",
+    "dataset": "musique",
+    "complexity": "complex",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Juba is located in South Sudan.",
+        "confidence": 0.9
+      },
+      {
+        "step_id": 2,
+        "content": "South Sudan shares a border with Ethiopia.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Ethiopia",
+    "raw_output": "{\n\"question\": \"What place does the administrative territorial entity that Juba is located in share a border with?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Juba is located in South Sudan.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\"content\": \"South Sudan shares a border with Ethiopia.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"Ethiopia\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Eastern Equatoria",
+    "sample_id": "2hop__191125_781346",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Where was the spouse of Frances Tupper born?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Frances Tupper's spouse is Richard Tupper.",
+        "confidence": 0.85
+      },
+      {
+        "step_id": 2,
+        "content": "Richard Tupper was born in New Brunswick, Canada.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "New Brunswick, Canada",
+    "raw_output": "{\n\"question\": \"Where was the spouse of Frances Tupper born?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Frances Tupper's spouse is Richard Tupper.\",\n\"confidence\": 0.85\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Richard Tupper was born in New Brunswick, Canada.\",\n\"confidence\": 0.85\n}\n],\n\"final\\_answer\": \"New Brunswick, Canada\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Amherst",
+    "sample_id": "2hop__475070_532404",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who founded the political party of Dimuthu Bandara Abayakoon?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Dimuthu Bandara Abayakoon is a politician from Sri Lanka.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "<unknown>",
+    "raw_output": "{\n\"question\": \"Who founded the political party of Dimuthu Bandara Abayakoon?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Dimuthu Bandara Abayakoon is a politician from Sri Lanka.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"<unknown>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "Rohana Wijeweera",
+    "sample_id": "2hop__700093_455653",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Bancroft's county borders what county?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Bancroft is in the state of Minnesota.",
+        "confidence": 0.9
+      },
+      {
+        "step_id": 2,
+        "content": "Minnesota has two counties: Hennepin and Ramsey.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Hennepin or Ramsey",
+    "raw_output": "{\n\"question\": \"Bancroft's county borders what county?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Bancroft is in the state of Minnesota.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\"content\": \"Minnesota has two counties: Hennepin and Ramsey.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"Hennepin or Ramsey\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Haliburton County",
+    "sample_id": "2hop__512773_346751",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "In which county is Mark Dismore's birthplace located?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Mark Dismore was born in London.",
+        "confidence": 0.85
+      }
+    ],
+    "final_answer": "London",
+    "raw_output": "{\n\"question\": \"In which county is Mark Dismore's birthplace located?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Mark Dismore was born in London.\",\n\"confidence\": 0.85\n}\n],\n\"final_answer\": \"London\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Hancock County",
+    "sample_id": "2hop__411091_625230",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who was the sibling of Nannina de' Medici?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "Nannina de' Medici was a sister of Lorenzo de' Medici.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "Lorenzo de' Medici",
+    "raw_output": "{\n\"question\": \"Who was the sibling of Nannina de' Medici?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Nannina de' Medici was a sister of Lorenzo de' Medici.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"Lorenzo de' Medici\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Giuliano de' Medici",
+    "sample_id": "2hop__423972_540249",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What county is the NRHEG High School located in?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The NRHEG High School is located in Northamptonshire.",
+        "confidence": 0.95
+      }
+    ],
+    "final_answer": "Northamptonshire",
+    "raw_output": "{\n\"question\": \"What county is the NRHEG High School located in?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The NRHEG High School is located in Northamptonshire.\",\n\"confidence\": 0.95\n}\n],\n\"final_answer\": \"Northamptonshire\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Waseca County",
+    "sample_id": "2hop__455158_247871",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "What league does the team that occupies the Rabat Ajax Football Ground belong to?",
+    "dataset": "football",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The Rabat Ajax Football Ground is located in Rabat, Morocco.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "<unknown>",
+    "raw_output": "{\n\"question\": \"What league does the team that occupies the Rabat Ajax Football Ground belong to?\",\n\"dataset\": \"football\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The Rabat Ajax Football Ground is located in Rabat, Morocco.\",\n\"confidence\": 0.9\n}\n],\n\"final_answer\": \"<unknown>\"\n}",
+    "parse_method": "schema",
+    "ground_truth": "Maltese Premier League",
+    "sample_id": "2hop__189094_612080",
+    "gold_complexity": "unknown"
+  },
+  {
+    "question": "Who was married to the star of No Escape?",
+    "dataset": "musique",
+    "complexity": "medium",
+    "steps": [
+      {
+        "step_id": 1,
+        "content": "The star of No Escape is Nicolas Cage.",
+        "confidence": 0.9
+      }
+    ],
+    "final_answer": "<one atomic inference>",
+    "raw_output": "{\n\"question\": \"Who was married to the star of No Escape?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The star of No Escape is Nicolas Cage.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"<one atomic inference>\"\n}",
+    "parse_method": "schema_repaired",
+    "ground_truth": "John Profumo",
+    "sample_id": "2hop__765678_310556",
+    "gold_complexity": "unknown"
+  }
+]

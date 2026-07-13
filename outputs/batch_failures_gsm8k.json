@@ -1,0 +1,23 @@
+[
+  {
+    "sample_id": "38",
+    "question": "John runs 60 miles a week. He runs 3 days a week.  He runs 3 hours the first day and half as much the other two days he runs.  How fast does he run?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 4,
+    "raw_output_snippet": "{\n\"question\": \"John runs 60 miles a week. He runs 3 days a week. He runs 3 hours the first day and half as much the other two days he runs. How fast does he run?\",\n\"dataset\": \"gsm8k\",\n\"complexity\": \"simple\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"First day: 3 hours = 0.5 \\* 6 hours\",\n\"confidence\": 0"
+  },
+  {
+    "sample_id": "44",
+    "question": "Charlie wants to sell beeswax candles.  For every pound of beeswax, he can make 10 tapered candles.  One pound of beeswax and the wicks cost $10.00 in supplies.   If he sells each candle for $2.00 each, what is his net profit if he makes and sells 20 candles?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 4,
+    "raw_output_snippet": "{\n\"question\": \"Charlie wants to sell beeswax candles. For every pound of beeswax, he can make 10 tapered candles. One pound of beeswax and the wicks cost $10.00 in supplies. If he sells each candle for $2.00 each, what is his net profit if he makes and sells 20 candles?\",\n\"dataset\": \"gsm8k\",\n\"comple"
+  },
+  {
+    "sample_id": "47",
+    "question": "John buys twice as many red ties as blue ties.  The red ties cost 50% more than blue ties.  He spent $200 on blue ties that cost $40 each. How much did he spend on ties?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 4,
+    "raw_output_snippet": "{\n\"question\": \"John buys twice as many red ties as blue ties. The red ties cost 50% more than blue ties. He spent $200 on blue ties that cost $40 each. How much did he spend on ties?\",\n\"dataset\": \"gsm8k\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Blue ties cost = $200 / 5 = $40 "
+  }
+]
