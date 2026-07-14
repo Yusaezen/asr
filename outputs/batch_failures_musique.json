@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "sample_id": "2hop__488811_30110",
+    "question": "What happened to the Curonians who lived in the area where Erich Zakowski was born?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"What happened to the Curonians who lived in the area where Erich Zakowski was born?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Erich Zakowski was born in Gdansk.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\"content\": \"Gdansk is a city in Poland."
+  },
+  {
+    "sample_id": "2hop__46065_417697",
+    "question": "Mohamed Atta's car made by the car manufacturer owning the naming rights to titans stadium is a type of what?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Mohamed Atta's car made by the car manufacturer owning the naming rights to titans stadium is a type of what?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Mohamed Atta's car was made by General Motors.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\""
+  },
+  {
+    "sample_id": "2hop__161915_78851",
+    "question": "which professional sports team would you not see play a home game in the arena where the last place Cream performed?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"which professional sports team would you not see play a home game in the arena where the last place Cream performed?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The last place Cream performed was at the Fillmore Auditorium.\",\n\"confidence\": 0"
+  },
+  {
+    "sample_id": "2hop__158275_35739",
+    "question": "When was one internet browser's version of Windows 8 made accessible?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"When was one internet browser's version of Windows 8 made accessible?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Internet Explorer is an internet browser.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"<one atomic inference>\",\n\"confi"
+  },
+  {
+    "sample_id": "2hop__846921_160249",
+    "question": "What years was Aeacides of Epirus's child at war?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"What years was Aeacides of Epirus's child at war?\",\n\"dataset\": \"musique\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Aeacides of Epirus's child was Alexander the Great.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"<one atomic inference>\"\n}\n{\n\"question\": \"What years "
+  },
+  {
+    "sample_id": "2hop__21104_16335",
+    "question": "The group representing at least 70% of Jews worldwide and Italians may be genetically similar due to what two factors?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"The group representing at least 70% of Jews worldwide and Italians may be genetically similar due to what two factors?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The group representing at least 70% of Jews worldwide and Italians is the Ashk"
+  },
+  {
+    "sample_id": "2hop__8496_21567",
+    "question": "Who introduced a system of musical notation used during the 14th century in the place where there is no evidence of a Slavic settlement before c. 600 AD?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 3,
+    "raw_output_snippet": "{\n\"question\": \"Who introduced a system of musical notation used during the 14th century in the place where there is no evidence of a Slavic settlement before c. 600 AD?\",\n\"dataset\": \"musique\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The system of musical notation used during "
+  }
+]
