@@ -4,6 +4,174 @@
     "question": "Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?",
     "parse_method": "fallback_sentence",
     "n_steps_parsed": 1,
-    "raw_output_snippet": "{\n\"question\": \"Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The Manchester Terrier is a breed of dog that descended from the Toy Poodle.\",\n\"confidence\": 0."
+    "raw_output_snippet": "{\n\"question\": \"Which dog's ancestors include Gordon and Irish Setters: the Manchester Terrier or the Scotch Collie?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The Manchester Terrier is a breed of dog that descends from the Toy Fox Terrier.\",\n\"confidence\""
+  },
+  {
+    "sample_id": "5ae2b770554299495565db0f",
+    "question": "In what month is the annual documentary film festival, that is presented by the fortnightly published British journal of literary essays, held? ",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 2,
+    "raw_output_snippet": "{\n\"question\": \"In what month is the annual documentary film festival, that is presented by the fortnightly published British journal of literary essays, held? \",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The annual documentary film festival is presented b"
+  },
+  {
+    "sample_id": "5a887bc0554299206df2b2b6",
+    "question": "The Argentine PGA Championship record holder has won how many tournaments worldwide?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"The Argentine PGA Championship record holder has won how many tournaments worldwide?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The current record holder of the Argentine PGA Championship is Guillermo Sanchez.\",\n\"confidence\": 0.9\n}\n],\n\"fin"
+  },
+  {
+    "sample_id": "5a87d8215542994775f60800",
+    "question": "This American crime film set in South Los Angeles was written and directed by the same director and writer of screenwriter of \"Street Kings\", \"End of Watch\", \"Sabotage\", \"Fury\" and what other film? ",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 2,
+    "raw_output_snippet": "{\n\"question\": \"This American crime film set in South Los Angeles was written and directed by the same director and writer of screenwriter of \\\"Street Kings\\\", \\\"End of Watch\\\", \\\"Sabotage\\\", \\\"Fury\\\" and what other film? \",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\""
+  },
+  {
+    "sample_id": "5a88d745554299206df2b378",
+    "question": "What occupation was shared by David Yates and Pietro Germi?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"What occupation was shared by David Yates and Pietro Germi?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"David Yates is a film director.\",\n\"confidence\": 0.85\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"Pietro Germi was also a film director.\",\n\"confide"
+  },
+  {
+    "sample_id": "5a8c65a1554299585d9e3680",
+    "question": "What is the name of the ethnic group who settled in Canada in the 17th century that participated in a conflict with Irish Catholic immigrants in the Shiners' War?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"What is the name of the ethnic group who settled in Canada in the 17th century that participated in a conflict with Irish Catholic immigrants in the Shiners' War?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The ethnic group who settled in C"
+  },
+  {
+    "sample_id": "5a7ec61a55429934daa2fc5f",
+    "question": "Are Staten Island Catapult and This Is Elvis both documentaries?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Are Staten Island Catapult and This Is Elvis both documentaries?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Staten Island Catapult is a documentary.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"This Is Elvis is also a documentary."
+  },
+  {
+    "sample_id": "5abf44025542993fe9a41def",
+    "question": "which writer has the highest number of skill  Langston Hughes or  Ian McEwan",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"which writer has the highest number of skill Langston Hughes or Ian McEwan\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Langston Hughes wrote poetry and fiction.\",\n\"confidence\": 0.9\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Ian McEwan is a novelist.\","
+  },
+  {
+    "sample_id": "5ab45a0b5542991779162c7e",
+    "question": "Which mall, Wilton Mall or Viaport Rotterdam, has had more owners?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which mall, Wilton Mall or Viaport Rotterdam, has had more owners?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Wilton Mall was owned by Simon Property Group.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": 2,\n\"content\": \"Viaport Rotterdam was owned by U"
+  },
+  {
+    "sample_id": "5ae15e125542990adbacf773",
+    "question": "In between Berghuis v. Thompkins and Mississippi University for Women v. Hogan which one was a  case decided 5-4 by the Supreme Court of the United States?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 6,
+    "raw_output_snippet": "{\n\"question\": \"In between Berghuis v. Thompkins and Mississippi University for Women v. Hogan which one was a case decided 5-4 by the Supreme Court of the United States?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Berghuis v. Thompkins was a case about wh"
+  },
+  {
+    "sample_id": "5a7ad9865542995eb53be8aa",
+    "question": "The \"civic rally cross\" was sold alongside what other model sold exclusively in Japan at Honda Verno dealerships? ",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 2,
+    "raw_output_snippet": "{\n\"question\": \"The \\\"civic rally cross\\\" was sold alongside what other model sold exclusively in Japan at Honda Verno dealerships? \",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The civic rally cross is a type of car accessory.\",\n\"confidence\": 0.9\n},\n{\n\"ste"
+  },
+  {
+    "sample_id": "5a77c74155429967ab105291",
+    "question": "Which band formed in England, Of Montreal or Vib Gyor?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which band formed in England, Of Montreal or Vib Gyor?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Of Montreal is a Canadian indie rock band.\",\n\"confidence\": 0.9\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Vib Gyor is an American psychedelic rock band."
+  },
+  {
+    "sample_id": "5ae2120e5542997283cd23ad",
+    "question": "Are Distortion Mirrors and OK Go both considered rock bands?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Are Distortion Mirrors and OK Go both considered rock bands?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Distortion Mirrors is a rock band.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"OK Go is a rock band.\",\n\"confidence\": 0.9\n},\n{"
+  },
+  {
+    "sample_id": "5adf430e5542993a75d2645e",
+    "question": "Which canal, Miami Canal or Dundee Canal, also supplies hydro-power and water for manufacturing?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which canal, Miami Canal or Dundee Canal, also supplies hydro-power and water for manufacturing?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The Miami Canal is a man-made canal in South Florida that provides water for irrigation and industri"
+  },
+  {
+    "sample_id": "5ae4808455429970de88d990",
+    "question": "How many people did the South Korean spree killer which NICS Improvement Amendments Act of 2007 enabaled to buy firearm killed in 2007",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"How many people did the South Korean spree killer which NICS Improvement Amendments Act of 2007 enabled to buy firearm killed in 2007\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The South Korean spree killer which NICS Improvement Amendment"
+  },
+  {
+    "sample_id": "5ab42b8955429942dd415ea6",
+    "question": "Iola is a city along the Neosho River in a region of Kansas that can be defined by Woddson County in the northwest, and what county in the northeast?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Iola is a city along the Neosho River in a region of Kansas that can be defined by Woddson County in the northwest, and what county in the northeast?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"complex\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Iola is a city in Kansas.\",\n\"confidence\": 0.85"
+  },
+  {
+    "sample_id": "5a7f3f7c55429934daa2fd45",
+    "question": "Which band has more members, The Futureheads or Marcy Playground?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which band has more members, The Futureheads or Marcy Playground?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"The Futureheads have four members.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"Marcy Playground has three members.\",\n\"co"
+  },
+  {
+    "sample_id": "5a733c925542991f9a20c6b7",
+    "question": "The Polar Bear and Daiquiri are both examples of what?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"The Polar Bear and Daiquiri are both examples of what?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"The Polar Bear is an animal.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step_id\": 2,\n\"content\": \"Daiquiri is a cocktail.\",\n\"confidence\": 0.9\n},\n{\n\"step_id\": "
+  },
+  {
+    "sample_id": "5ac3d4b6554299204fd21e93",
+    "question": "Which magazine is focused more on the adult demographic, Jack and Jill or Paper?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which magazine is focused more on the adult demographic, Jack and Jill or Paper?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Jack and Jill is a children's magazine.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step_id\": 2,\n\"content\": \"Paper is an adult magaz"
+  },
+  {
+    "sample_id": "5a8babf05542996e8ac8899e",
+    "question": "Whose native growing land is more south, Beech or Daviesia?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Whose native growing land is more south, Beech or Daviesia?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Beech is a tree species native to Europe and Asia.\",\n\"confidence\": 0.9\n},\n{\n\"step\\_id\": 2,\n\"content\": \"Daviesia is a plant genus native "
+  },
+  {
+    "sample_id": "5a8a265b5542992d82986ecc",
+    "question": "Between Frederick King Keller and Ian Schneider, which filmmaker had more diverse job experiences?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 3,
+    "raw_output_snippet": "{\n\"question\": \"Between Frederick King Keller and Ian Schneider, which filmmaker had more diverse job experiences?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Frederick King Keller directed the films 'The Skeleton Key', 'The Possession', and 'The Conjuring'"
+  },
+  {
+    "sample_id": "5ae3fd2c5542995dadf2428f",
+    "question": "Are Ian Brown and Dee Snider both actors?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Are Ian Brown and Dee Snider both actors?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Ian Brown is a musician.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"Dee Snider is an actor.\",\n\"confidence\": 0.9\n}\n],\n\"final\\_answer\": \"no\"\n}"
+  },
+  {
+    "sample_id": "5adde3a45542997545bbbdc2",
+    "question": "Are both Delmer Daves and Jean-Pierre Jeunet film directors?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Are both Delmer Daves and Jean-Pierre Jeunet film directors?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Delmer Daves is a film director.\",\n\"confidence\": 0.85\n}\n],\n{\n\"step_id\": 2,\n\"content\": \"Jean-Pierre Jeunet is a film director.\",\n\"confide"
+  },
+  {
+    "sample_id": "5ae4585c5542996836b02c89",
+    "question": "Which band has more members Band of Skulls or Live ?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Which band has more members Band of Skulls or Live ?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step\\_id\": 1,\n\"content\": \"Band of Skulls has four members.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step\\_id\": 2,\n\"content\": \"Live has five members.\",\n\"confidence\": 0.9\n},\n{\n\"step\\_i"
+  },
+  {
+    "sample_id": "5abeb0da5542997ec76fd34b",
+    "question": "Were both Monkey Kingdom and Anaganaga O Dheerudu connected with Disney?",
+    "parse_method": "fallback_sentence",
+    "n_steps_parsed": 1,
+    "raw_output_snippet": "{\n\"question\": \"Were both Monkey Kingdom and Anaganaga O Dheerudu connected with Disney?\",\n\"dataset\": \"hotpotqa\",\n\"complexity\": \"medium\",\n\"steps\": [\n{\n\"step_id\": 1,\n\"content\": \"Monkey Kingdom was a Disney film.\",\n\"confidence\": 0.9\n}\n],\n{\n\"step_id\": 2,\n\"content\": \"Anaganaga O Dheerudu is not a Disney "
   }
 ]
