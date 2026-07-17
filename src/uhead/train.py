@@ -101,7 +101,8 @@ def _train_loop(
         uhead.train()
         train_loss = 0.0
         for states, labels in train_loader:
-            states, labels = states.to(device), labels.to(device)
+            states = states.float().to(device)
+            labels = labels.to(device)
             optimizer.zero_grad()
             preds = uhead(states).squeeze(1)
             loss = criterion_weighted(preds, labels)
@@ -117,7 +118,8 @@ def _train_loop(
         total = 0
         with torch.no_grad():
             for states, labels in val_loader:
-                states, labels = states.to(device), labels.to(device)
+                states = states.float().to(device)
+                labels = labels.to(device)
                 preds = uhead(states).squeeze(1)
                 val_loss += criterion_weighted(preds, labels).item()
                 predicted = (preds > 0.5).float()
