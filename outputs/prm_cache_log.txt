@@ -1,0 +1,41 @@
+nohup: ignoring input
+2026-07-17 09:38:19,682 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-17 09:38:19,705 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/config.json "HTTP/1.1 200 OK"
+2026-07-17 09:38:19,939 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-17 09:38:19,949 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-17 09:38:20,175 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-17 09:38:20,185 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-17 09:38:20,419 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/mistralai/Mistral-7B-Instruct-v0.2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-17 09:38:20,948 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/models/mistralai/Mistral-7B-Instruct-v0.2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-17 09:38:21,054 [INFO] confidence.model_loader — Loading mistralai/Mistral-7B-Instruct-v0.2 with 4-bit NF4 quantization (bitsandbytes)...
+2026-07-17 09:38:21,277 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-17 09:38:21,289 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/291 [00:00<00:05, 47.93it/s]Loading weights:   8%|▊         | 24/291 [00:00<00:02, 126.13it/s]Loading weights:  16%|█▌        | 46/291 [00:00<00:01, 166.97it/s]Loading weights:  23%|██▎       | 67/291 [00:00<00:01, 180.84it/s]Loading weights:  30%|██▉       | 86/291 [00:00<00:01, 182.33it/s]Loading weights:  36%|███▌      | 105/291 [00:00<00:01, 181.96it/s]Loading weights:  45%|████▍     | 130/291 [00:00<00:00, 202.79it/s]Loading weights:  53%|█████▎    | 153/291 [00:00<00:00, 209.33it/s]Loading weights:  60%|██████    | 176/291 [00:00<00:00, 212.94it/s]Loading weights:  69%|██████▉   | 202/291 [00:01<00:00, 222.22it/s]Loading weights:  77%|███████▋  | 225/291 [00:01<00:00, 223.24it/s]Loading weights:  85%|████████▌ | 248/291 [00:01<00:00, 224.01it/s]Loading weights:  94%|█████████▍| 274/291 [00:01<00:00, 232.02it/s]Loading weights: 100%|██████████| 291/291 [00:01<00:00, 206.02it/s]
+2026-07-17 09:38:24,292 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-17 09:38:24,292 [WARNING] huggingface_hub.utils._http — Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-17 09:38:24,302 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/mistralai/Mistral-7B-Instruct-v0.2/63a8b081895390a26e140280378bc85ec8bce07a/generation_config.json "HTTP/1.1 200 OK"
+2026-07-17 09:38:24,304 [INFO] confidence.model_loader — Model loaded and ready.
+2026-07-17 09:38:24,591 [INFO] uhead.prm_dataset — Loading trl-lib/prm800k [train] (limit=50000 steps)...
+2026-07-17 09:38:24,858 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/trl-lib/prm800k/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-17 09:38:24,871 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/trl-lib/prm800k/80f9eb3db495dc550414291c9c21359dd8c35efc/README.md "HTTP/1.1 200 OK"
+2026-07-17 09:38:25,101 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/trl-lib/prm800k/resolve/80f9eb3db495dc550414291c9c21359dd8c35efc/prm800k.py "HTTP/1.1 404 Not Found"
+2026-07-17 09:38:26,445 [INFO] httpx — HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/trl-lib/prm800k/trl-lib/prm800k.py "HTTP/1.1 404 Not Found"
+2026-07-17 09:38:26,711 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/datasets/trl-lib/prm800k/revision/80f9eb3db495dc550414291c9c21359dd8c35efc "HTTP/1.1 200 OK"
+2026-07-17 09:38:26,932 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/trl-lib/prm800k/resolve/80f9eb3db495dc550414291c9c21359dd8c35efc/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-07-17 09:38:30,244 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/datasets/trl-lib/prm800k/tree/80f9eb3db495dc550414291c9c21359dd8c35efc/data?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-17 09:38:30,474 [INFO] httpx — HTTP Request: GET https://huggingface.co/api/datasets/trl-lib/prm800k/tree/80f9eb3db495dc550414291c9c21359dd8c35efc?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-07-17 09:38:30,697 [INFO] httpx — HTTP Request: HEAD https://huggingface.co/datasets/trl-lib/prm800k/resolve/80f9eb3db495dc550414291c9c21359dd8c35efc/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-07-17 09:38:30,705 [INFO] uhead.prm_dataset — Extracting hidden states from PRM800K steps...
+2026-07-17 09:38:31,480 [INFO] uhead.prm_dataset —   Row 0, steps so far: 5
+2026-07-17 09:40:45,432 [INFO] uhead.prm_dataset —   Row 200, steps so far: 1127
+2026-07-17 09:45:36,282 [INFO] uhead.prm_dataset —   Row 400, steps so far: 3340
+2026-07-17 09:52:41,005 [INFO] uhead.prm_dataset —   Row 600, steps so far: 6566
+2026-07-17 10:00:43,012 [INFO] uhead.prm_dataset —   Row 800, steps so far: 10107
+2026-07-17 10:03:15,964 [INFO] uhead.prm_dataset —   Row 1000, steps so far: 11330
+2026-07-17 10:14:47,979 [INFO] uhead.prm_dataset —   Row 1200, steps so far: 16146
+2026-07-17 10:48:00,788 [INFO] uhead.prm_dataset —   Row 1400, steps so far: 29718
+2026-07-17 11:06:31,925 [INFO] uhead.prm_dataset —   Row 1600, steps so far: 37341
+2026-07-17 11:36:10,314 [INFO] uhead.prm_dataset —   Row 1800, steps so far: 49441
+2026-07-17 11:37:33,586 [INFO] uhead.prm_dataset — Cache saved → /home/admin/Documents/nithilan/asr/outputs/prm800k_hidden_states.pt
+  Steps cached: 50000, skipped: 0
