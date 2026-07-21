@@ -152,12 +152,12 @@ def pretrain(epochs: int = 3, lr: float = 1e-4, batch_size: int = 256):
 
 def finetune(epochs: int = 2, lr: float = 5e-5, batch_size: int = 32):
     device = get_device()
-    dataset = load_domain_datasets(["gsm8k", "hotpotqa"])
+    dataset = load_domain_datasets(["musique"])
     logger.info(f"Fine-tuning UHead on domain labels ({len(dataset)} steps)...")
 
     uhead = UHead()
     if PRETRAIN_CKPT.exists():
-        uhead.load_state_dict(torch.load(PRETRAIN_CKPT, map_location="cpu"))
+        uhead.load_state_dict(torch.load(PRETRAIN_CKPT, map_location="cpu", weights_only=False))
         logger.info(f"Loaded pretrained weights from {PRETRAIN_CKPT}")
     else:
         logger.warning("No pretrained checkpoint found — fine-tuning from scratch.")
@@ -174,8 +174,8 @@ if __name__ == "__main__":
     parser.add_argument("--pretrain", action="store_true")
     parser.add_argument("--finetune-cache", action="store_true",
                         help="Extract domain hidden states for fine-tuning")
-    parser.add_argument("--dataset", type=str, default="gsm8k",
-                        choices=["gsm8k", "hotpotqa"])
+    parser.add_argument("--dataset", type=str, default="musique",
+                        choices=["gsm8k", "hotpotqa","musique"])
     parser.add_argument("--finetune", action="store_true")
     parser.add_argument("--epochs", type=int, default=None)
     args = parser.parse_args()

@@ -90,7 +90,45 @@ python src/uhead/train.py --finetune --epochs 2
 
 ---
 
-## 4. Output Summary
+## 4. Walkthrough for sir :
+
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+#### A. Run Correctness Verification (NLI Grading)
+Evaluates step logic using a Natural Language Inference (DeBERTa-v3-mnli) cross-encoder model against gold-standard premises.
+```bash
+# Label steps as 'correct' (entailed), 'incorrect' (contradicted), or 'ambiguous' (neutral)
+python src/correctness/run_correctness.py --dataset musique
+```
+
+#### 1. Cache PRM800K Hidden States
+Pre-extracts hidden states from the large-scale math reasoning dataset to accelerate training.
+```bash
+python src/uhead/train.py --build-cache --cache-limit 50000
+```
+
+#### 2. Pretrain UHead (Stage 1)
+Trains the UHead MLP classifier on the cached PRM800K hidden states.
+```bash
+python src/uhead/train.py --pretrain --epochs 3
+```
+
+#### 3. Build Domain Fine-Tuning Caches
+Caches the hidden states of domain datasets (GSM8K, HotpotQA) using the correctness labels graded by the NLI step (Step C). Ambiguous/unknown labels are automatically filtered out.
+```bash
+python src/uhead/train.py --finetune-cache --dataset musique
+```
+
+#### 4. Fine-tune UHead (Stage 2)
+Fine-tunes the pretrained UHead on target-domain labels.
+```bash
+python src/uhead/train.py --finetune --epochs 2
+
+
+## 5. Output Summary
 * **Base Generation**: `outputs/<dataset>_confidence_scores.json`
 * **NLI Labels**: `outputs/<dataset>_correctness_labels.json`
 * **Pretrained Checkpoint**: `outputs/uhead_pretrained.pt`

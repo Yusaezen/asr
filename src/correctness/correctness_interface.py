@@ -61,6 +61,14 @@ def score_correctness(dataset: str, steps: List[dict], gold: Dict) -> Dict:
             facts=gold.get("facts", []),
             decomposition=gold.get("decomposition", []),
         )
+    # After the hotpotqa elif block, add:
+    elif dataset == "musique":
+        from musique_checker import check_musique_correctness
+        return check_musique_correctness(
+            sample_id=gold.get("sample_id", ""),
+            steps=steps,
+            split=gold.get("split", "validation"),
+        )
 
     else:
         raise ValueError(

@@ -121,6 +121,8 @@ def run_correctness(dataset: str, n: int = None, gold_limit: int = DEFAULT_GOLD_
                     "facts": gold_row.get("facts", []),
                     "decomposition": gold_row.get("decomposition", []),
                 }
+            elif dataset == "musique":
+                gold = {"sample_id": sample_id, "split": "validation"}
             else:
                 raise ValueError(f"Unsupported dataset '{dataset}'.")
 
@@ -178,7 +180,7 @@ def run_correctness(dataset: str, n: int = None, gold_limit: int = DEFAULT_GOLD_
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", choices=["gsm8k", "hotpotqa", "strategyqa"], required=True)
+    parser.add_argument("--dataset", choices=["gsm8k", "hotpotqa", "strategyqa", "musique"], required=True)
     parser.add_argument("--n", type=int, default=None, help="Limit number of samples (default: all)")
     parser.add_argument("--gold-limit", type=int, default=DEFAULT_GOLD_LIMIT,
                         help="How many gold rows to index for positional-id datasets (gsm8k/strategyqa)")

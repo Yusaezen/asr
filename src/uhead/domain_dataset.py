@@ -144,7 +144,7 @@ def build_domain_cache(
 
 class DomainDataset(Dataset):
     def __init__(self, cache_path: Path):
-        data = torch.load(cache_path, map_location="cpu")
+        data = torch.load(cache_path, map_location="cpu", weights_only=False)
         self.states = data["states"]
         self.labels = data["labels"]
 
@@ -155,7 +155,7 @@ class DomainDataset(Dataset):
         return self.states[idx], self.labels[idx]
 
 
-def load_domain_datasets(datasets: List[str] = ("gsm8k", "hotpotqa")) -> ConcatDataset:
+def load_domain_datasets(datasets: List[str] = ("musique",)) -> ConcatDataset:
     parts = []
     for ds in datasets:
         cache_path = OUTPUTS_DIR / f"domain_hidden_states_{ds}.pt"
