@@ -118,7 +118,7 @@ class PRM800KDataset(Dataset):
                 f"Cache not found at {cache_path}.\n"
                 f"Run: python uhead/train.py --build-cache"
             )
-        data = torch.load(cache_path, map_location="cpu")
+        data = torch.load(cache_path, map_location="cpu", weights_only=False)
         self.states = data["states"]
         self.labels = data["labels"]
         logger.info(f"Loaded PRM800K cache: {len(self.states)} steps.")

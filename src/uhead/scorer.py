@@ -31,7 +31,7 @@ def _load_uhead() -> UHead:
     _uhead = UHead()
     ckpt = FINETUNE_CKPT if FINETUNE_CKPT.exists() else PRETRAIN_CKPT
     if ckpt.exists():
-        _uhead.load_state_dict(torch.load(ckpt, map_location="cpu"))
+        _uhead.load_state_dict(torch.load(ckpt, map_location="cpu", weights_only=False))
         logger.info(f"UHead loaded from {ckpt}")
     else:
         logger.warning(
