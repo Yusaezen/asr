@@ -4,3 +4,4 @@ logs/
 __pycache__/
 *.pyc
 .DS_Store
+outputs/prm800k_hidden_states/
